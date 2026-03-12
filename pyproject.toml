@@ -1,0 +1,13 @@
+[project]
+name = "inform-dref-scores"
+version = "0.1.0"
+description = "INFORM Risk Score DREF Prioritization Tool"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.28",
+    "pandas>=2.0",
+    "openpyxl>=3.1",
+]
+
+[tool.uv]
+package = false
