@@ -6,61 +6,33 @@
 #   "openpyxl>=3.1",
 # ]
 # ///
-"""
-INFORM Risk Score — DREF Prioritization Tool
-=============================================
-Queries the INFORM risk score API and classifies countries by
-DREF likelihood for a chosen region and three-month window.
+"""Build a four-hazard seasonal DREF watchlist from current IFRC GO APIs.
 
-SCORING MODES:
-  individual   — results per individual hazard (DR, FL, TC separately)
-  combined     — combined score: [DR+WF] and [FL+TC]
-  both         — runs individual + combined sections (default)
+The watchlist is intentionally not a combined INFORM index. It keeps every
+eligible country in the audit data, then selects at most four distinct countries
+per region, hazard group, and colour for the presentation:
 
-COMBINATION METHODOLOGY:
-  Drought + Wildfire (DR+WF):
-    The INFORM API provides Drought (DR) scores but NOT a dedicated
-    Wildfire (WF) index for Africa/global regions. Therefore:
-      - If only DR is available:  combined = DR score
-      - WF availability is flagged in the output so you know which
-        component was missing.
+* Red: every Very High country, falling back to High if none is Very High.
+* Orange: High after a Very High Red; otherwise Medium.
 
-  Flood + Tropical Cyclone (FL+TC):
-    Both FL and TC are available in INFORM. The combined score uses
-    the INFORM geometric mean formula:
-      combined_monthly = sqrt(FL_score * TC_score)
-    Geometric mean is the standard INFORM aggregation method — it is
-    sensitive to both components (unlike max which ignores the lower
-    value) but dampens outliers (unlike sum which double-counts).
-    If one hazard has zero score, the geometric mean collapses to 0,
-    which is intentional: a country with zero flood risk and TC risk
-    should not show a combined flood+TC threat just from the TC alone.
-    In that case, the individual TC or FL score is also shown.
-    FALLBACK — if one component is missing/zero for all months:
-      combined = the available non-zero component score.
-
-USAGE EXAMPLES:
-  uv run dref_analysis.py --region 0 --months 3 4 5
-  uv run dref_analysis.py --region 0 --months 6 7 8 --output excel
-  uv run dref_analysis.py --region 1 --months 9 10 11 --mode combined
-  uv run dref_analysis.py --region 2 --months 12 1 2 --mode both --output all
-  uv run dref_analysis.py --region 0 --months 3 4 5 --show-medium
-
-REGION CODES:
-  0 = Africa  |  1 = Americas  |  2 = Asia-Pacific  |  3 = Europe  |  4 = MENA
+Run, for example:
+    uv run dref_analysis.py --region all --months 6 7 8 --output all
+    uv run dref_analysis.py --region 0 --months 7 8 9 --output excel
+    uv run dref_analysis.py --self-check
 """
 
 import argparse
-import math
 import sys
-import requests
-import pandas as pd
 from datetime import datetime
 from pathlib import Path
 
-# ── Configuration ─────────────────────────────────────────────────────────────
+import pandas as pd
+import requests
 
-API_BASE = "https://go-risk.northeurope.cloudapp.azure.com/api/v1/risk-score/"
+
+RISK_SCORE_URL = "https://go-risk-api.ifrc.org/api/v1/risk-score/"
+SEASONAL_URL = "https://go-risk-api.ifrc.org/api/v1/seasonal/"
+M49_LOOKUP_PATH = Path(__file__).with_name("un_m49_subregions.csv")
 
 REGION_NAMES = {
     0: "Africa",
@@ -71,557 +43,713 @@ REGION_NAMES = {
 }
 
 MONTH_NAMES = {
-    1: "January", 2: "February", 3: "March",    4: "April",
-    5: "May",     6: "June",     7: "July",      8: "August",
+    1: "January", 2: "February", 3: "March", 4: "April",
+    5: "May", 6: "June", 7: "July", 8: "August",
     9: "September", 10: "October", 11: "November", 12: "December",
 }
 
-MONTH_KEYS = {
-    1: "january",   2: "february",  3: "march",     4: "april",
-    5: "may",       6: "june",      7: "july",       8: "august",
-    9: "september", 10: "october",  11: "november",  12: "december",
+HAZARD_LABELS = {
+    "DR": "Drought",
+    "WF": "Wildfire",
+    "FL": "Flood",
+    "TC": "Tropical Cyclone",
 }
 
-# INFORM risk classification thresholds
-THRESHOLDS = {
-    "Very High": 6.5,  # ≥ 6.5  → strong case for DREF
-    "High":      5.0,  # ≥ 5.0  → DREF probable
-    "Medium":    3.0,  # ≥ 3.0  → monitor
+HAZARD_GROUPS = {
+    "DR": "Drought/Wildfire",
+    "WF": "Drought/Wildfire",
+    "FL": "Floods/TC",
+    "TC": "Floods/TC",
 }
 
-TIER_EMOJI = {
-    "Very High": "🔴",
-    "High":      "🟠",
-    "Medium":    "🟡",
-    "Low":       "🟢",
+GROUP_ORDER = {"Drought/Wildfire": 0, "Floods/TC": 1}
+PRESENTATION_COUNTRY_LIMIT = 4
+CATEGORY_LEVEL = {
+    "Very Low": 1,
+    "Low": 2,
+    "Medium": 3,
+    "High": 4,
+    "Very High": 5,
+}
+AGGREGATE_REGION_NAMES = set(REGION_NAMES.values()) | {
+    f"{name} Region" for name in REGION_NAMES.values()
 }
 
-AGGREGATE_REGION_NAMES = {
-    "Africa Region", "Americas Region", "Asia-Pacific Region",
-    "Europe Region", "MENA Region",
-}
+
+def month_key(month: int) -> str:
+    """Return the lower-case API field name for a month number."""
+    return MONTH_NAMES[month].lower()
 
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
-
-def classify_score(score: float) -> str:
-    """Return the INFORM risk class for a given score (0–10 scale)."""
-    if score >= THRESHOLDS["Very High"]:
+def classify_score(hazard: str, score: float) -> str:
+    """Return the IFRC GO display category for one hazard's raw score."""
+    if hazard == "WF":
+        if score <= 2:
+            return "Very Low"
+        if score <= 5:
+            return "Low"
+        if score <= 9:
+            return "Medium"
+        if score <= 17:
+            return "High"
         return "Very High"
-    elif score >= THRESHOLDS["High"]:
-        return "High"
-    elif score >= THRESHOLDS["Medium"]:
+
+    if score <= 2:
+        return "Very Low"
+    if score <= 3.5:
+        return "Low"
+    if score <= 5:
         return "Medium"
-    return "Low"
+    if score <= 6.5:
+        return "High"
+    return "Very High"
 
 
-def dref_implication(tier: str) -> str:
-    return {
-        "Very High": "Strong case for DREF",
-        "High":      "DREF probable",
-        "Medium":    "Monitor closely",
-        "Low":       "Unlikely",
-    }.get(tier, "")
+def score_value(record: dict, key: str) -> float:
+    """Safely read one monthly value from an API record."""
+    return float(record.get(key, 0.0) or 0.0)
 
 
-def geom_mean(a: float, b: float) -> float:
-    """
-    INFORM geometric mean of two scores.
-    If either is zero, falls back to the non-zero value (rather than
-    forcing the product to zero when one hazard is genuinely absent).
-    """
-    if a > 0 and b > 0:
-        return round(math.sqrt(a * b), 2)
-    elif a > 0:
-        return round(a, 2)
-    elif b > 0:
-        return round(b, 2)
-    return 0.0
+def selected_window(record: dict, months: list[int]) -> tuple[list[float], float, str]:
+    """Return values, highest value, and its first month in the selected window."""
+    scores = [score_value(record, month_key(month)) for month in months]
+    peak = max(scores)
+    return scores, peak, MONTH_NAMES[months[scores.index(peak)]]
 
 
-def month_score(record: dict, month_key: str) -> float:
-    """Safely extract a monthly score from a record."""
-    return float(record.get(month_key, 0.0) or 0.0)
+def country_details(record: dict) -> tuple[str, str]:
+    """Read country name and ISO3 from either current API response shape."""
+    details = record.get("country_details") or {}
+    country = details.get("name")
+    iso3 = details.get("iso3", "")
+
+    if not country:
+        country_field = record.get("country")
+        if isinstance(country_field, dict):
+            country = country_field.get("name")
+            iso3 = iso3 or country_field.get("iso3", "")
+
+    return country or "Unknown", str(iso3 or "").upper()
 
 
-# ── API ───────────────────────────────────────────────────────────────────────
-
-def fetch_scores(region: int) -> list[dict]:
-    """Fetch all risk score records for a given region from the INFORM API."""
-    url = f"{API_BASE}?region={region}&limit=9999"
-    print(f"\n  Fetching data — region={region} ({REGION_NAMES.get(region, 'Unknown')})…")
+def load_un_m49_lookup() -> pd.DataFrame:
+    """Load the versioned UN M49 ISO3-to-geographic-group lookup."""
+    required_columns = {"ISO3", "UN Subregion", "UN Intermediate Region"}
     try:
-        resp = requests.get(url, timeout=30)
-        resp.raise_for_status()
+        lookup = pd.read_csv(M49_LOOKUP_PATH, dtype=str, keep_default_na=False)
+    except OSError as exc:
+        raise RuntimeError(f"Cannot read UN M49 lookup: {exc}") from exc
+
+    if not required_columns.issubset(lookup.columns):
+        raise RuntimeError(f"UN M49 lookup is missing columns: {required_columns}")
+
+    lookup = lookup[["ISO3", "UN Subregion", "UN Intermediate Region"]].copy()
+    lookup["ISO3"] = lookup["ISO3"].str.upper()
+    if lookup["ISO3"].duplicated().any():
+        raise RuntimeError("UN M49 lookup has duplicate ISO3 codes.")
+
+    lookup["UN Regional Group"] = lookup["UN Intermediate Region"].where(
+        lookup["UN Intermediate Region"].ne(""), lookup["UN Subregion"]
+    )
+    return lookup
+
+
+def add_un_m49_groups(hazard_peaks: pd.DataFrame) -> pd.DataFrame:
+    """Attach the most specific available UN M49 geographic group to each row."""
+    if hazard_peaks.empty:
+        return hazard_peaks
+
+    result = hazard_peaks.merge(load_un_m49_lookup(), on="ISO3", how="left", validate="many_to_one")
+    unmapped = result["UN Regional Group"].isna()
+    if unmapped.any():
+        codes = ", ".join(sorted(result.loc[unmapped, "ISO3"].unique()))
+        print(f"Warning: no UN M49 mapping for {codes}.", file=sys.stderr)
+        result.loc[unmapped, "UN Regional Group"] = "Unmapped in UN M49"
+        result.loc[unmapped, ["UN Subregion", "UN Intermediate Region"]] = ""
+    return result
+
+
+def fetch_json(url: str, params: dict) -> object:
+    """Fetch one IFRC GO JSON response or exit with a useful error."""
+    try:
+        response = requests.get(url, params=params, timeout=30)
+        response.raise_for_status()
     except requests.RequestException as exc:
-        print(f"  ❌ API request failed: {exc}")
+        print(f"API request failed: {exc}", file=sys.stderr)
         sys.exit(1)
-    records = resp.json().get("results", [])
-    print(f"  ✅ {len(records)} records received.")
-    return records
+    return response.json()
 
 
-# ── Individual hazard analysis ────────────────────────────────────────────────
+def fetch_region_records(region: int) -> tuple[list[dict], list[dict]]:
+    """Fetch INFORM DR/FL/TC and GWIS wildfire records for one region."""
+    print(f"Fetching {REGION_NAMES[region]} data...")
+    risk_payload = fetch_json(RISK_SCORE_URL, {"region": region, "limit": 9999})
+    seasonal_payload = fetch_json(SEASONAL_URL, {"region": region})
 
-def build_individual_df(records: list[dict], months: list[int]) -> pd.DataFrame:
-    """
-    One row per (country, hazard_type).
-    Risk class is based on the PEAK monthly score within the window.
-    """
-    mkeys  = [MONTH_KEYS[m]  for m in months]
-    mlabels = [MONTH_NAMES[m] for m in months]
+    risk_records = risk_payload.get("results", []) if isinstance(risk_payload, dict) else []
+    if isinstance(seasonal_payload, list):
+        seasonal_payload = seasonal_payload[0] if seasonal_payload else {}
+    wildfire_records = (
+        seasonal_payload.get("gwis_seasonal", [])
+        if isinstance(seasonal_payload, dict)
+        else []
+    )
+
+    print(f"  {len(risk_records)} INFORM records; {len(wildfire_records)} GWIS wildfire records.")
+    return risk_records, wildfire_records
+
+
+def build_hazard_peaks(
+    regional_records: list[tuple[int, list[dict], list[dict]]], months: list[int]
+) -> pd.DataFrame:
+    """Create one peak-within-window row per country and hazard."""
     rows = []
+    seen: set[tuple[int, str, str]] = set()
 
-    for r in records:
-        cd = r.get("country_details", {})
-        country = cd.get("name", "Unknown")
-        if country in AGGREGATE_REGION_NAMES:
-            continue
-        hazard = r.get("hazard_type", "")
-        if hazard not in ("DR", "FL", "TC"):
-            continue
+    for region, risk_records, wildfire_records in regional_records:
+        sources = (
+            (risk_records, "INFORM risk-score API"),
+            (wildfire_records, "GWIS seasonal API"),
+        )
+        for records, source in sources:
+            for record in records:
+                hazard = str(record.get("hazard_type", "")).upper()
+                if hazard not in HAZARD_LABELS:
+                    continue
 
-        scores  = [month_score(r, k) for k in mkeys]
-        avg     = round(sum(scores) / len(scores), 2)
-        peak    = max(scores)
-        peak_m  = mlabels[scores.index(peak)]
+                country, iso3 = country_details(record)
+                if (
+                    country in AGGREGATE_REGION_NAMES
+                    or country == "Unknown"
+                    or country.endswith("Country Cluster")
+                ):
+                    continue
 
-        row = {
-            "Country":          country,
-            "ISO3":             cd.get("iso3", ""),
-            "Hazard":           hazard,
-            "Hazard Label":     {"DR": "Drought", "FL": "Flood", "TC": "Tropical Cyclone"}[hazard],
-            "LCC":              r.get("lcc",           0.0),
-            "Vulnerability":    r.get("vulnerability",  0.0),
-            "Population (k)":   round(r.get("population_in_thousands", 0.0), 1),
-            "Window Avg":       avg,
-            "Peak Score":       round(peak, 2),
-            "Peak Month":       peak_m,
-            "Risk Class":       classify_score(peak),
-            "DREF Implication": dref_implication(classify_score(peak)),
-        }
-        for lbl, sc in zip(mlabels, scores):
-            row[lbl] = sc
-        rows.append(row)
+                key = (region, iso3 or country, hazard)
+                if key in seen:
+                    continue
+                seen.add(key)
+
+                scores, peak, peak_month = selected_window(record, months)
+                categories = [classify_score(hazard, score) for score in scores]
+                peak_category = classify_score(hazard, peak)
+                high_months = sum(CATEGORY_LEVEL[category] >= 4 for category in categories)
+                row = {
+                    "Region Code": region,
+                    "Region": REGION_NAMES[region],
+                    "Group": HAZARD_GROUPS[hazard],
+                    "Country": country,
+                    "ISO3": iso3,
+                    "Hazard": hazard,
+                    "Hazard Label": HAZARD_LABELS[hazard],
+                    "Source": source,
+                    "Peak Score": round(peak, 2),
+                    "Peak Month": peak_month,
+                    "Risk Category": peak_category,
+                    "Months in Risk Category": categories.count(peak_category),
+                    "High or Very High Months": high_months,
+                }
+                row.update({MONTH_NAMES[month]: score for month, score in zip(months, scores)})
+                rows.append(row)
+
+    month_columns = [MONTH_NAMES[month] for month in months]
+    columns = [
+        "Region Code", "Region", "Group", "Country", "ISO3", "Hazard",
+        "Hazard Label", "Source", "Peak Score", "Peak Month", "Risk Category",
+        "Months in Risk Category", "High or Very High Months", *month_columns,
+    ]
+    if not rows:
+        return pd.DataFrame(columns=columns)
 
     df = pd.DataFrame(rows)
-    if df.empty:
-        return df
-    cls_order = {"Very High": 0, "High": 1, "Medium": 2, "Low": 3}
-    df["_o"] = df["Risk Class"].map(cls_order)
-    df = (df.sort_values(["Hazard", "_o", "Window Avg"], ascending=[True, True, False])
-            .drop(columns=["_o"])
-            .reset_index(drop=True))
-    return df
+    df["_category_order"] = df["Risk Category"].map(CATEGORY_LEVEL)
+    df = (
+        df.sort_values(
+            ["Region Code", "Hazard", "_category_order", "Peak Score", "High or Very High Months", "Country"],
+            ascending=[True, True, False, False, False, True],
+        )
+        .drop(columns="_category_order")
+        .reset_index(drop=True)
+    )
+    return df[columns]
 
 
-# ── Combined hazard analysis ──────────────────────────────────────────────────
+def ranked_in_category(subset: pd.DataFrame, category: str) -> pd.DataFrame:
+    """Rank all countries within one region, hazard, and risk category."""
+    candidates = subset[subset["Risk Category"] == category]
+    candidates = candidates.sort_values(
+        ["Peak Score", "Months in Risk Category", "Country"],
+        ascending=[False, False, True],
+    ).copy()
+    candidates["Hazard Tier Rank"] = range(1, len(candidates) + 1)
+    return candidates
 
-def build_combined_df(records: list[dict], months: list[int]) -> pd.DataFrame:
-    """
-    Returns one row per country per combined category:
-      • Drought + Wildfire  (DR+WF)  — WF not in INFORM API; uses DR only, flagged
-      • Flood + Cyclone     (FL+TC)  — geometric mean per month, then peak classified
 
-    METHODOLOGY for FL+TC per month:
-        combined_m = geom_mean(FL_m, TC_m)
-        where geom_mean(a,b) = sqrt(a*b)  if both > 0
-                             = max(a,b)   if one is zero (fallback)
-    """
-    mkeys   = [MONTH_KEYS[m]  for m in months]
-    mlabels = [MONTH_NAMES[m] for m in months]
+def selected_row(row: pd.Series, colour: str, rule: str) -> dict:
+    """Attach the presentation selection metadata to one country-hazard row."""
+    result = row.to_dict()
+    result["Colour"] = colour
+    result["DREF Status"] = (
+        "DREF highly probable" if colour == "Red" else "DREF uncertain/probable"
+    )
+    result["Selection Rule"] = rule
+    return result
 
-    # Index records by (country_name, hazard_type)
-    index: dict[tuple[str, str], dict] = {}
-    meta:  dict[str, dict] = {}  # country_name -> country metadata
 
-    for r in records:
-        cd      = r.get("country_details", {})
-        country = cd.get("name", "Unknown")
-        if country in AGGREGATE_REGION_NAMES:
-            continue
-        hazard = r.get("hazard_type", "")
-        if hazard not in ("DR", "FL", "TC"):
-            continue
-        index[(country, hazard)] = r
-        if country not in meta:
-            meta[country] = {
-                "ISO3":           cd.get("iso3", ""),
-                "LCC":            r.get("lcc",           0.0),
-                "Vulnerability":  r.get("vulnerability",  0.0),
-                "Population (k)": round(r.get("population_in_thousands", 0.0), 1),
-            }
+def select_hazard_watchlist(hazard_peaks: pd.DataFrame) -> pd.DataFrame:
+    """Select all Red/Orange-tier countries for every region and hazard."""
+    selected = []
+    if hazard_peaks.empty:
+        return pd.DataFrame()
+
+    for (_, _, hazard), subset in hazard_peaks.groupby(
+        ["Region Code", "Region", "Hazard"], sort=True
+    ):
+        very_high = ranked_in_category(subset, "Very High")
+        high = ranked_in_category(subset, "High")
+        medium = ranked_in_category(subset, "Medium")
+
+        if not very_high.empty:
+            selected.extend(
+                selected_row(row, "Red", "Very High risk tier")
+                for _, row in very_high.iterrows()
+            )
+            if not high.empty:
+                selected.extend(
+                    selected_row(row, "Orange", "High risk tier")
+                    for _, row in high.iterrows()
+                )
+        elif not high.empty:
+            selected.extend(
+                selected_row(row, "Red", "High risk tier (no Very High country)")
+                for _, row in high.iterrows()
+            )
+            if not medium.empty:
+                selected.extend(
+                    selected_row(row, "Orange", "Medium risk tier")
+                    for _, row in medium.iterrows()
+                )
+
+    if not selected:
+        return pd.DataFrame()
+
+    result = pd.DataFrame(selected)
+    result["_group_order"] = result["Group"].map(GROUP_ORDER)
+    result["_colour_order"] = result["Colour"].map({"Red": 0, "Orange": 1})
+    result = (
+        result.sort_values(
+            ["Region Code", "_group_order", "_colour_order", "Hazard", "Hazard Tier Rank"],
+            ascending=[True, True, True, True, True],
+        )
+        .drop(columns=["_group_order", "_colour_order"])
+        .reset_index(drop=True)
+    )
+    return result
+
+
+def presentation_options(candidates: pd.DataFrame, group_candidates: pd.DataFrame) -> list[dict]:
+    """Rank distinct countries without comparing scores from different hazards."""
+    options = []
+    for (country, iso3, un_group), candidate_rows in candidates.groupby(
+        ["Country", "ISO3", "UN Regional Group"], sort=False
+    ):
+        supporting_rows = group_candidates[group_candidates["ISO3"] == iso3]
+        options.append({
+            "Country": country,
+            "ISO3": iso3,
+            "UN Regional Group": un_group,
+            "Candidate Hazards": set(candidate_rows["Hazard"]),
+            "Hazard Count": supporting_rows["Hazard"].nunique(),
+            "Best Hazard Tier Rank": int(candidate_rows["Hazard Tier Rank"].min()),
+            "Qualifying Months": int(candidate_rows["Months in Risk Category"].sum()),
+            "Supporting Rows": supporting_rows,
+        })
+
+    return sorted(
+        options,
+        key=lambda option: (
+            -option["Hazard Count"],
+            option["Best Hazard Tier Rank"],
+            -option["Qualifying Months"],
+            option["Country"],
+        ),
+    )
+
+
+def choose_presentation_options(candidates: pd.DataFrame, group_candidates: pd.DataFrame) -> list[dict]:
+    """Choose up to four countries while covering every available hazard."""
+    options = presentation_options(candidates, group_candidates)
+    if not options:
+        return []
+
+    chosen = []
+    chosen_iso3 = set()
+    uncovered_hazards = set(candidates["Hazard"])
+    while uncovered_hazards:
+        available = [item for item in options if item["ISO3"] not in chosen_iso3]
+        option = max(
+            available,
+            key=lambda item: len(item["Candidate Hazards"] & uncovered_hazards),
+            default=None,
+        )
+        if option is None or not option["Candidate Hazards"] & uncovered_hazards:
+            break
+        chosen.append(option)
+        chosen_iso3.add(option["ISO3"])
+        uncovered_hazards -= option["Candidate Hazards"]
+
+    for option in options:
+        if len(chosen) == PRESENTATION_COUNTRY_LIMIT:
+            break
+        if option["ISO3"] not in chosen_iso3:
+            chosen.append(option)
+            chosen_iso3.add(option["ISO3"])
+
+    return sorted(
+        chosen,
+        key=lambda option: (
+            -option["Hazard Count"],
+            option["Best Hazard Tier Rank"],
+            -option["Qualifying Months"],
+            option["Country"],
+        ),
+    )[:PRESENTATION_COUNTRY_LIMIT]
+
+
+def build_presentation_watchlist(selected: pd.DataFrame) -> pd.DataFrame:
+    """Build the capped four-country Red/Orange presentation shortlist."""
+    columns = [
+        "Region Code", "Region", "Group", "UN Regional Group", "Colour",
+        "DREF Status", "Presentation Rank", "Country", "ISO3", "Hazard Count",
+        "Highest Risk Category", "Hazard Reasons", "Selection Basis",
+    ]
+    if selected.empty:
+        return pd.DataFrame(columns=columns)
 
     rows = []
-    countries = sorted(meta.keys())
-
-    for country in countries:
-        m = meta[country]
-
-        # ── Drought + Wildfire ────────────────────────────────────────────────
-        dr_rec = index.get((country, "DR"))
-        # WF is not present in the INFORM API for any region
-        wf_available = False
-
-        if dr_rec is not None:
-            dr_scores = [month_score(dr_rec, k) for k in mkeys]
-        else:
-            dr_scores = [0.0] * len(months)
-
-        # Combined DR+WF = DR score (WF absent); flag it
-        drwf_scores = dr_scores  # placeholder — if WF ever added, use geom_mean here
-        drwf_avg    = round(sum(drwf_scores) / len(drwf_scores), 2)
-        drwf_peak   = max(drwf_scores) if drwf_scores else 0.0
-        drwf_peak_m = mlabels[drwf_scores.index(drwf_peak)] if drwf_peak > 0 else "—"
-        drwf_class  = classify_score(drwf_peak)
-
-        drwf_row = {
-            "Country":         country,
-            "Category":        "Drought + Wildfire",
-            "Category Code":   "DR+WF",
-            "DR available":    dr_rec is not None,
-            "WF available":    wf_available,
-            "Combination":     "DR only (WF not in INFORM API)",
-            **m,
-            "Window Avg":      drwf_avg,
-            "Peak Score":      round(drwf_peak, 2),
-            "Peak Month":      drwf_peak_m,
-            "Risk Class":      drwf_class,
-            "DREF Implication": dref_implication(drwf_class),
+    for (region_code, region, group), group_candidates in selected.groupby(
+        ["Region Code", "Region", "Group"], sort=True
+    ):
+        red_candidates = group_candidates[group_candidates["Colour"] == "Red"]
+        red_iso3 = set(red_candidates["ISO3"])
+        colour_candidates = {
+            "Red": red_candidates,
+            "Orange": group_candidates[
+                (group_candidates["Colour"] == "Orange")
+                & ~group_candidates["ISO3"].isin(red_iso3)
+            ],
         }
-        for lbl, sc in zip(mlabels, drwf_scores):
-            drwf_row[lbl] = sc
-        rows.append(drwf_row)
 
-        # ── Flood + Tropical Cyclone ──────────────────────────────────────────
-        fl_rec = index.get((country, "FL"))
-        tc_rec = index.get((country, "TC"))
+        for colour in ("Red", "Orange"):
+            chosen = choose_presentation_options(colour_candidates[colour], group_candidates)
+            for rank, option in enumerate(chosen, start=1):
+                supporting = option["Supporting Rows"].copy()
+                supporting["_category_order"] = supporting["Risk Category"].map(CATEGORY_LEVEL)
+                supporting = supporting.sort_values(
+                    ["_category_order", "Hazard Tier Rank"], ascending=[False, True]
+                )
+                reasons = "; ".join(
+                    f"{item['Hazard Label']}, {item['Risk Category']}, "
+                    f"{item['Peak Score']:.1f} ({item['Peak Month']})"
+                    for _, item in supporting.iterrows()
+                )
+                highest = max(supporting["Risk Category"], key=CATEGORY_LEVEL.get)
+                rows.append({
+                    "Region Code": region_code,
+                    "Region": region,
+                    "Group": group,
+                    "UN Regional Group": option["UN Regional Group"],
+                    "Colour": colour,
+                    "DREF Status": (
+                        "DREF highly probable" if colour == "Red" else "DREF uncertain/probable"
+                    ),
+                    "Presentation Rank": rank,
+                    "Country": option["Country"],
+                    "ISO3": option["ISO3"],
+                    "Hazard Count": option["Hazard Count"],
+                    "Highest Risk Category": highest,
+                    "Hazard Reasons": reasons,
+                    "Selection Basis": (
+                        "Qualifies for both hazards"
+                        if option["Hazard Count"] > 1
+                        else "Best available hazard-tier rank"
+                    ),
+                })
 
-        fl_scores = [month_score(fl_rec, k) for k in mkeys] if fl_rec else [0.0] * len(months)
-        tc_scores = [month_score(tc_rec, k) for k in mkeys] if tc_rec else [0.0] * len(months)
+    result = pd.DataFrame(rows, columns=columns)
+    if result.empty:
+        return result
+    result["_group_order"] = result["Group"].map(GROUP_ORDER)
+    result["_colour_order"] = result["Colour"].map({"Red": 0, "Orange": 1})
+    return (
+        result.sort_values(
+            ["Region Code", "_group_order", "_colour_order", "Presentation Rank"],
+            ascending=True,
+        )
+        .drop(columns=["_group_order", "_colour_order"])
+        .reset_index(drop=True)
+    )
 
-        # Determine which components are actually present (non-zero across all months)
-        fl_present = fl_rec is not None and any(s > 0 for s in fl_scores)
-        tc_present = tc_rec is not None and any(s > 0 for s in tc_scores)
 
-        if fl_present and tc_present:
-            combination_desc = "Geometric mean: √(FL × TC)"
-        elif fl_present:
-            combination_desc = "FL only (TC = 0 for this country)"
-        elif tc_present:
-            combination_desc = "TC only (FL = 0 for this country)"
+def presentation_display_lines(colour_subset: pd.DataFrame, markdown: bool = False) -> list[str]:
+    """Group two or more selected countries from the same UN M49 subregion."""
+    ordered = colour_subset.sort_values("Presentation Rank")
+    lines = []
+    for un_group in ordered["UN Regional Group"].drop_duplicates():
+        regional = ordered[ordered["UN Regional Group"] == un_group]
+        details = []
+        for _, row in regional.iterrows():
+            country = f"**{row['Country']}**" if markdown else row["Country"]
+            details.append(f"{country} — {row['Hazard Reasons']}")
+        if len(regional) > 1:
+            lines.append(f"{un_group} ({' | '.join(details)})")
         else:
-            combination_desc = "No FL or TC data"
-
-        fltc_scores = [geom_mean(f, t) for f, t in zip(fl_scores, tc_scores)]
-        fltc_avg    = round(sum(fltc_scores) / len(fltc_scores), 2)
-        fltc_peak   = max(fltc_scores) if fltc_scores else 0.0
-        fltc_peak_m = mlabels[fltc_scores.index(fltc_peak)] if fltc_peak > 0 else "—"
-        fltc_class  = classify_score(fltc_peak)
-
-        fltc_row = {
-            "Country":          country,
-            "Category":         "Flood + Tropical Cyclone",
-            "Category Code":    "FL+TC",
-            "FL available":     fl_present,
-            "TC available":     tc_present,
-            "Combination":      combination_desc,
-            **m,
-            "Window Avg":       fltc_avg,
-            "Peak Score":       round(fltc_peak, 2),
-            "Peak Month":       fltc_peak_m,
-            "Risk Class":       fltc_class,
-            "DREF Implication": dref_implication(fltc_class),
-        }
-        # Also store raw FL and TC per month for transparency
-        for lbl, fs, ts, cs in zip(mlabels, fl_scores, tc_scores, fltc_scores):
-            fltc_row[f"FL_{lbl}"] = fs
-            fltc_row[f"TC_{lbl}"] = ts
-            fltc_row[lbl]         = cs   # combined column
-
-        rows.append(fltc_row)
-
-    df = pd.DataFrame(rows)
-    if df.empty:
-        return df
-    cls_order = {"Very High": 0, "High": 1, "Medium": 2, "Low": 3}
-    df["_o"] = df["Risk Class"].map(cls_order)
-    df = (df.sort_values(["Category Code", "_o", "Window Avg"], ascending=[True, True, False])
-            .drop(columns=["_o"])
-            .reset_index(drop=True))
-    return df
+            lines.append(f"{details[0]} — {un_group}")
+    return lines
 
 
-# ── Display helpers ───────────────────────────────────────────────────────────
+def print_report(presentation: pd.DataFrame, months: list[int]) -> None:
+    """Print the capped presentation shortlist."""
+    month_text = " / ".join(MONTH_NAMES[month] for month in months)
+    print(f"\n{'=' * 74}\nIFRC GO FOUR-HAZARD DREF WATCHLIST\nPeriod: {month_text}\nGenerated: {datetime.now():%d %b %Y %H:%M}\n{'=' * 74}")
+    print("Red: DREF highly probable | Orange: DREF uncertain/probable")
+    print("Selection is a seasonal watchlist, not a combined INFORM index.\n")
 
-def print_banner(region: int, months: list[int], mode: str) -> None:
-    region_name = REGION_NAMES.get(region, f"Region {region}")
-    month_str   = " / ".join(MONTH_NAMES[m] for m in months)
-    print(f"\n{'='*76}")
-    print(f"  INFORM DREF PRIORITIZATION REPORT")
-    print(f"  Region : {region_name}  |  Period : {month_str}  |  Mode : {mode}")
-    print(f"  Generated : {datetime.now().strftime('%d %b %Y %H:%M')}")
-    print(f"{'='*76}")
-
-
-def _table_header(mlabels: list[str]) -> None:
-    cols = "  ".join(f"{m[:3]:>5}" for m in mlabels)
-    print(f"  {'Country':<28} {'Win Avg':>8}  {'Peak':>6}  {'Peak Month':<12}"
-          f"  {'LCC':>5}  {'Vuln':>5}  {cols}")
-    print(f"  {'-'*28}  {'-------':>8}  {'-----':>6}  {'----------':<12}"
-          f"  {'-----':>5}  {'-----':>5}  " + "  ".join(f"{'-----':>5}" for _ in mlabels))
-
-
-def _table_row(row: pd.Series, mlabels: list[str]) -> None:
-    scores_str = "  ".join(f"{row.get(m, 0.0):>5.1f}" for m in mlabels)
-    print(f"  {row['Country']:<28} {row['Window Avg']:>8.2f}  {row['Peak Score']:>6.2f}"
-          f"  {row['Peak Month']:<12}  {row['LCC']:>5.1f}  {row['Vulnerability']:>5.1f}  {scores_str}")
-
-
-def print_individual_section(df: pd.DataFrame, hazard: str,
-                             months: list[int], show_medium: bool) -> None:
-    mlabels = [MONTH_NAMES[m] for m in months]
-    label_map = {"DR": "Drought", "FL": "Flood", "TC": "Tropical Cyclone"}
-    label = label_map.get(hazard, hazard)
-
-    sub = df[df["Hazard"] == hazard].copy()
-    tiers = ["Very High", "High"] + (["Medium"] if show_medium else [])
-    sub = sub[sub["Risk Class"].isin(tiers)]
-
-    print(f"\n{'─'*76}")
-    print(f"  INDIVIDUAL HAZARD — {label} ({hazard})")
-    print(f"{'─'*76}")
-
-    if sub.empty:
-        print("  No countries qualify at Very High or High level for this window.")
+    if presentation.empty:
+        print("No Very High, High, or Medium hazard selections were found.")
         return
 
-    for tier in tiers:
-        subset = sub[sub["Risk Class"] == tier]
-        if subset.empty:
+    for region_code in sorted(presentation["Region Code"].unique()):
+        region_subset = presentation[presentation["Region Code"] == region_code]
+        print(f"{REGION_NAMES[region_code].upper()}")
+        for group in GROUP_ORDER:
+            group_subset = region_subset[region_subset["Group"] == group]
+            if group_subset.empty:
+                continue
+            print(f"  {group}")
+            for colour in ("Red", "Orange"):
+                colour_subset = group_subset[group_subset["Colour"] == colour]
+                if colour_subset.empty:
+                    continue
+                print(f"    {colour} — {colour_subset.iloc[0]['DREF Status']}")
+                for rank, line in enumerate(presentation_display_lines(colour_subset), start=1):
+                    print(f"      {rank}. {line}")
+        print()
+
+
+def autosize_excel(writer: pd.ExcelWriter, sheet_name: str) -> None:
+    """Make exported sheets readable without adding a formatting dependency."""
+    worksheet = writer.sheets[sheet_name]
+    for column in worksheet.columns:
+        width = max((len(str(cell.value)) for cell in column if cell.value is not None), default=10)
+        worksheet.column_dimensions[column[0].column_letter].width = min(width + 2, 55)
+
+
+def file_stem(regions: list[int], months: list[int]) -> str:
+    """Build a stable output filename stem."""
+    region_part = "all_regions" if len(regions) == len(REGION_NAMES) else REGION_NAMES[regions[0]].lower().replace("-", "_")
+    month_part = "_".join(MONTH_NAMES[month][:3] for month in months)
+    return f"dref_watchlist_{region_part}_{month_part}"
+
+
+def export_excel(
+    presentation: pd.DataFrame,
+    selected: pd.DataFrame,
+    peaks: pd.DataFrame,
+    regions: list[int],
+    months: list[int],
+    output_dir: Path,
+) -> None:
+    """Export presentation rows, exact selections, and their audit data."""
+    path = output_dir / f"{file_stem(regions, months)}.xlsx"
+    with pd.ExcelWriter(path, engine="openpyxl") as writer:
+        for sheet_name, dataframe in (
+            ("Presentation Watchlist", presentation),
+            ("Hazard Selections", selected),
+            ("All Hazard Peaks", peaks),
+        ):
+            dataframe.to_excel(writer, sheet_name=sheet_name, index=False)
+            autosize_excel(writer, sheet_name)
+    print(f"Excel written: {path}")
+
+
+def export_csv(
+    presentation: pd.DataFrame,
+    selected: pd.DataFrame,
+    peaks: pd.DataFrame,
+    regions: list[int],
+    months: list[int],
+    output_dir: Path,
+) -> None:
+    """Export the same three tables as CSV files."""
+    stem = file_stem(regions, months)
+    for suffix, dataframe in (
+        ("presentation", presentation),
+        ("hazard_selections", selected),
+        ("all_hazard_peaks", peaks),
+    ):
+        path = output_dir / f"{stem}_{suffix}.csv"
+        dataframe.to_csv(path, index=False)
+        print(f"CSV written: {path}")
+
+
+def export_markdown(
+    presentation: pd.DataFrame,
+    regions: list[int],
+    months: list[int],
+    output_dir: Path,
+) -> None:
+    """Write grouped Red/Orange country lists for presentation drafting."""
+    month_text = " / ".join(MONTH_NAMES[month] for month in months)
+    lines = [
+        "# IFRC GO four-hazard DREF watchlist",
+        "",
+        f"**Period:** {month_text}",
+        "",
+        "- Red: DREF highly probable",
+        "- Orange: DREF uncertain/probable",
+        "- This is a seasonal watchlist, not a combined INFORM index.",
+    ]
+    for region_code in regions:
+        region_subset = presentation[presentation["Region Code"] == region_code]
+        if region_subset.empty:
             continue
-        emoji = TIER_EMOJI[tier]
-        print(f"\n  {emoji} {tier.upper()}  ·  {dref_implication(tier)}")
-        _table_header(mlabels)
-        for _, row in subset.iterrows():
-            _table_row(row, mlabels)
+        lines.extend(["", f"## {REGION_NAMES[region_code]}"])
+        for group in GROUP_ORDER:
+            group_subset = region_subset[region_subset["Group"] == group]
+            if group_subset.empty:
+                continue
+            lines.extend(["", f"### {group}"])
+            for colour in ("Red", "Orange"):
+                colour_subset = group_subset[group_subset["Colour"] == colour]
+                if colour_subset.empty:
+                    continue
+                status = colour_subset.iloc[0]["DREF Status"]
+                lines.extend(["", f"**{colour} — {status}**"])
+                for rank, line in enumerate(
+                    presentation_display_lines(colour_subset, markdown=True), start=1
+                ):
+                    lines.append(f"{rank}. {line}")
+
+    path = output_dir / f"{file_stem(regions, months)}.md"
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print(f"Markdown written: {path}")
 
 
-def print_combined_section(df: pd.DataFrame, category_code: str,
-                           months: list[int], show_medium: bool) -> None:
-    mlabels = [MONTH_NAMES[m] for m in months]
-    label_map = {
-        "DR+WF": "Drought + Wildfire  (combined)",
-        "FL+TC": "Flood + Tropical Cyclone  (combined, geometric mean)",
+def run_self_check() -> None:
+    """Small runnable check for thresholds, window peaks, and fallback selection."""
+    assert classify_score("DR", 6.5) == "High"
+    assert classify_score("DR", 6.51) == "Very High"
+    assert classify_score("WF", 17) == "High"
+    assert classify_score("WF", 17.01) == "Very High"
+    lookup = load_un_m49_lookup().set_index("ISO3")
+    assert lookup.loc["MLI", "UN Regional Group"] == "Western Africa"
+    assert lookup.loc["SDN", "UN Regional Group"] == "Northern Africa"
+
+    scores, peak, peak_month = selected_window(
+        {"june": 6.6, "july": 2.0, "august": 2.0}, [6, 7, 8]
+    )
+    assert scores == [6.6, 2.0, 2.0] and peak == 6.6 and peak_month == "June"
+    cluster = {
+        "hazard_type": "WF",
+        "country_details": {"name": "Test Country Cluster", "iso3": "TST"},
+        "june": 20.0,
+        "july": 20.0,
+        "august": 20.0,
     }
-    label = label_map.get(category_code, category_code)
+    assert build_hazard_peaks([(0, [], [cluster])], [6, 7, 8]).empty
 
-    sub = df[df["Category Code"] == category_code].copy()
-    tiers = ["Very High", "High"] + (["Medium"] if show_medium else [])
-    sub = sub[sub["Risk Class"].isin(tiers)]
+    sample = pd.DataFrame([
+        {"Region Code": 0, "Region": "Africa", "Group": "Drought/Wildfire", "UN Regional Group": "Western Africa", "Country": "A", "ISO3": "AAA", "Hazard": "DR", "Hazard Label": "Drought", "Peak Score": 7.0, "Peak Month": "June", "Risk Category": "Very High", "Months in Risk Category": 1, "High or Very High Months": 1},
+        {"Region Code": 0, "Region": "Africa", "Group": "Drought/Wildfire", "UN Regional Group": "Western Africa", "Country": "D", "ISO3": "DDD", "Hazard": "DR", "Hazard Label": "Drought", "Peak Score": 6.8, "Peak Month": "June", "Risk Category": "Very High", "Months in Risk Category": 1, "High or Very High Months": 1},
+        {"Region Code": 0, "Region": "Africa", "Group": "Drought/Wildfire", "UN Regional Group": "Western Africa", "Country": "E", "ISO3": "EEE", "Hazard": "DR", "Hazard Label": "Drought", "Peak Score": 6.7, "Peak Month": "August", "Risk Category": "Very High", "Months in Risk Category": 1, "High or Very High Months": 1},
+        {"Region Code": 0, "Region": "Africa", "Group": "Drought/Wildfire", "UN Regional Group": "Western Africa", "Country": "B", "ISO3": "BBB", "Hazard": "DR", "Hazard Label": "Drought", "Peak Score": 6.0, "Peak Month": "July", "Risk Category": "High", "Months in Risk Category": 2, "High or Very High Months": 2},
+        {"Region Code": 0, "Region": "Africa", "Group": "Drought/Wildfire", "UN Regional Group": "Western Africa", "Country": "C", "ISO3": "CCC", "Hazard": "DR", "Hazard Label": "Drought", "Peak Score": 4.0, "Peak Month": "August", "Risk Category": "Medium", "Months in Risk Category": 3, "High or Very High Months": 0},
+    ])
+    selection = select_hazard_watchlist(sample)
+    assert list(selection["Country"]) == ["A", "D", "E", "B"]
+    presentation = build_presentation_watchlist(selection)
+    assert list(presentation[presentation["Colour"] == "Red"]["Country"]) == ["A", "D", "E"]
+    assert list(presentation[presentation["Colour"] == "Orange"]["Country"]) == ["B"]
+    assert len(presentation_display_lines(presentation[presentation["Colour"] == "Red"])) == 1
 
-    print(f"\n{'─'*76}")
-    print(f"  COMBINED — {label}")
-    if category_code == "DR+WF":
-        print(f"  NOTE: Wildfire (WF) is not available in the INFORM API.")
-        print(f"        Combined score = DR score. WF column flagged N/A.")
-    elif category_code == "FL+TC":
-        print(f"  METHOD: combined_month = √(FL_score × TC_score)")
-        print(f"          If one component is 0, fallback = the non-zero component.")
-    print(f"{'─'*76}")
+    multi_hazard = pd.concat([
+        sample,
+        pd.DataFrame([
+            {"Region Code": 0, "Region": "Africa", "Group": "Drought/Wildfire", "UN Regional Group": "Eastern Africa", "Country": "F", "ISO3": "FFF", "Hazard": "WF", "Hazard Label": "Wildfire", "Peak Score": 40.0, "Peak Month": "June", "Risk Category": "Very High", "Months in Risk Category": 1, "High or Very High Months": 1},
+            {"Region Code": 0, "Region": "Africa", "Group": "Drought/Wildfire", "UN Regional Group": "Eastern Africa", "Country": "G", "ISO3": "GGG", "Hazard": "WF", "Hazard Label": "Wildfire", "Peak Score": 30.0, "Peak Month": "July", "Risk Category": "Very High", "Months in Risk Category": 1, "High or Very High Months": 1},
+            {"Region Code": 0, "Region": "Africa", "Group": "Drought/Wildfire", "UN Regional Group": "Eastern Africa", "Country": "H", "ISO3": "HHH", "Hazard": "WF", "Hazard Label": "Wildfire", "Peak Score": 20.0, "Peak Month": "August", "Risk Category": "Very High", "Months in Risk Category": 1, "High or Very High Months": 1},
+        ]),
+    ], ignore_index=True)
+    presentation = build_presentation_watchlist(select_hazard_watchlist(multi_hazard))
+    red = presentation[presentation["Colour"] == "Red"]
+    assert len(red) == PRESENTATION_COUNTRY_LIMIT
+    assert set(red["Country"]) & {"A", "D", "E"}
+    assert set(red["Country"]) & {"F", "G", "H"}
 
-    if sub.empty:
-        print("  No countries qualify at Very High or High level for this window.")
-        return
+    no_very_high = sample[~sample["Country"].isin(["A", "D", "E"])]
+    selection = select_hazard_watchlist(no_very_high)
+    assert list(selection["Country"]) == ["B", "C"]
+    assert list(selection["Risk Category"]) == ["High", "Medium"]
+    print("Self-check passed.")
 
-    for tier in tiers:
-        subset = sub[sub["Risk Class"] == tier]
-        if subset.empty:
-            continue
-        emoji = TIER_EMOJI[tier]
-        print(f"\n  {emoji} {tier.upper()}  ·  {dref_implication(tier)}")
-        _table_header(mlabels)
-        for _, row in subset.iterrows():
-            _table_row(row, mlabels)
-            # Show combination note inline
-            combo = row.get("Combination", "")
-            if combo:
-                print(f"    ↳ {combo}")
-
-
-def print_summary(ind_df: pd.DataFrame, comb_df: pd.DataFrame,
-                  months: list[int]) -> None:
-    month_str = " / ".join(MONTH_NAMES[m] for m in months)
-    print(f"\n{'='*76}")
-    print(f"  SUMMARY — DREF Candidates (Very High + High) · {month_str}")
-    print(f"{'='*76}")
-    print(f"  {'#':<4} {'Country':<28} {'Category':<28} {'Class':<12} {'Win Avg':>8}  Implication")
-    print(f"  {'─'*4} {'─'*28} {'─'*28} {'─'*12} {'─'*8}  {'─'*22}")
-
-    rows_ind  = ind_df[ind_df["Risk Class"].isin(["Very High", "High"])]  if not ind_df.empty  else pd.DataFrame()
-    rows_comb = comb_df[comb_df["Risk Class"].isin(["Very High", "High"])] if not comb_df.empty else pd.DataFrame()
-
-    i = 1
-    for _, row in rows_ind.iterrows():
-        emoji = TIER_EMOJI.get(row["Risk Class"], "")
-        label = f"{row['Hazard Label']} [{row['Hazard']}]"
-        print(f"  {i:<4} {row['Country']:<28} {label:<28} "
-              f"{emoji} {row['Risk Class']:<10} {row['Window Avg']:>8.2f}  {row['DREF Implication']}")
-        i += 1
-
-    for _, row in rows_comb.iterrows():
-        emoji = TIER_EMOJI.get(row["Risk Class"], "")
-        label = f"{row['Category']} [{row['Category Code']}]"
-        print(f"  {i:<4} {row['Country']:<28} {label:<28} "
-              f"{emoji} {row['Risk Class']:<10} {row['Window Avg']:>8.2f}  {row['DREF Implication']}")
-        i += 1
-
-    print(f"\n  Total DREF candidates shown: {i - 1}")
-
-
-# ── Export ────────────────────────────────────────────────────────────────────
-
-def _autosize_excel(ws) -> None:
-    for col in ws.columns:
-        max_len = max((len(str(c.value)) for c in col if c.value), default=10)
-        ws.column_dimensions[col[0].column_letter].width = min(max_len + 2, 45)
-
-
-def export_excel(ind_df: pd.DataFrame, comb_df: pd.DataFrame,
-                 region: int, months: list[int], output_dir: Path) -> None:
-    rname     = REGION_NAMES.get(region, f"region{region}").lower().replace("-", "_")
-    month_tag = "_".join(MONTH_NAMES[m][:3] for m in months)
-    fname     = output_dir / f"dref_{rname}_{month_tag}.xlsx"
-
-    with pd.ExcelWriter(fname, engine="openpyxl") as writer:
-        # Individual hazards
-        if not ind_df.empty:
-            for hazard, label in [("DR", "Drought"), ("FL", "Flood"), ("TC", "TC")]:
-                sub = ind_df[ind_df["Hazard"] == hazard]
-                if not sub.empty:
-                    sub.to_excel(writer, sheet_name=f"Individual_{label}", index=False)
-                    _autosize_excel(writer.sheets[f"Individual_{label}"])
-
-        # Combined
-        if not comb_df.empty:
-            for code, label in [("DR+WF", "Drought+WF"), ("FL+TC", "Flood+TC")]:
-                sub = comb_df[comb_df["Category Code"] == code]
-                if not sub.empty:
-                    # DREF only sheet
-                    dref_sub = sub[sub["Risk Class"].isin(["Very High", "High"])]
-                    sheet    = f"DREF_{label}"
-                    dref_sub.to_excel(writer, sheet_name=sheet, index=False)
-                    _autosize_excel(writer.sheets[sheet])
-                    # Full sheet
-                    full_sheet = f"All_{label}"
-                    sub.to_excel(writer, sheet_name=full_sheet, index=False)
-                    _autosize_excel(writer.sheets[full_sheet])
-
-    print(f"\n  💾 Excel → {fname}")
-
-
-def export_csv(ind_df: pd.DataFrame, comb_df: pd.DataFrame,
-               region: int, months: list[int], output_dir: Path) -> None:
-    rname     = REGION_NAMES.get(region, f"region{region}").lower().replace("-", "_")
-    month_tag = "_".join(MONTH_NAMES[m][:3] for m in months)
-
-    if not ind_df.empty:
-        p = output_dir / f"individual_{rname}_{month_tag}.csv"
-        ind_df.to_csv(p, index=False)
-        print(f"  💾 CSV  → {p}")
-
-    if not comb_df.empty:
-        for code, label in [("DR+WF", "drwf"), ("FL+TC", "fltc")]:
-            sub = comb_df[comb_df["Category Code"] == code]
-            if not sub.empty:
-                p = output_dir / f"combined_{label}_{rname}_{month_tag}.csv"
-                sub.to_csv(p, index=False)
-                print(f"  💾 CSV  → {p}")
-
-
-# ── CLI ───────────────────────────────────────────────────────────────────────
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="INFORM DREF Prioritization Tool",
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog=__doc__,
+        description="Build an IFRC GO four-hazard seasonal DREF watchlist.",
     )
     parser.add_argument(
-        "--region", "-r", type=int, default=0, choices=[0, 1, 2, 3, 4],
-        help="0=Africa 1=Americas 2=Asia-Pacific 3=Europe 4=MENA  (default: 0)",
+        "--region", "-r", default="all", choices=["all", "0", "1", "2", "3", "4"],
+        help="all (default), 0=Africa, 1=Americas, 2=Asia-Pacific, 3=Europe, 4=MENA",
     )
     parser.add_argument(
-        "--months", "-m", type=int, nargs=3, default=[3, 4, 5],
+        "--months", "-m", type=int, nargs=3, default=[6, 7, 8],
         metavar=("M1", "M2", "M3"),
-        help="Three months 1–12  e.g. --months 3 4 5  (default: March April May)",
+        help="Three-month watch window, e.g. --months 6 7 8 (default: June July August)",
     )
     parser.add_argument(
-        "--mode", type=str, default="both",
-        choices=["individual", "combined", "both"],
-        help="individual = per-hazard; combined = DR+WF and FL+TC; both = all  (default: both)",
+        "--output", "-o", default="console", choices=["console", "excel", "csv", "markdown", "all"],
+        help="console (default), excel, csv, markdown, or all",
     )
     parser.add_argument(
-        "--output", "-o", type=str, default="console",
-        choices=["console", "excel", "csv", "all"],
-        help="Output format  (default: console)",
+        "--output-dir",
+        default="outputs/risk_scores",
+        help="Folder for saved files (default: outputs/risk_scores)",
     )
-    parser.add_argument(
-        "--output-dir", type=str, default=".",
-        help="Folder for saved files  (default: current directory)",
-    )
-    parser.add_argument(
-        "--show-medium", action="store_true",
-        help="Also show Medium-risk countries (score 3.0–4.9)",
-    )
+    parser.add_argument("--self-check", action="store_true", help="Run checks without calling the APIs")
     return parser.parse_args()
 
 
-# ── Main ──────────────────────────────────────────────────────────────────────
-
 def main() -> None:
     args = parse_args()
+    if args.self_check:
+        run_self_check()
+        return
 
-    for m in args.months:
-        if not 1 <= m <= 12:
-            print(f"  ❌ Invalid month {m}. Must be 1–12.")
-            sys.exit(1)
+    if any(not 1 <= month <= 12 for month in args.months):
+        print("Months must be integers from 1 to 12.", file=sys.stderr)
+        sys.exit(2)
 
-    output_dir = Path(args.output_dir)
-    output_dir.mkdir(parents=True, exist_ok=True)
+    regions = list(REGION_NAMES) if args.region == "all" else [int(args.region)]
+    regional_records = []
+    for region in regions:
+        risk_records, wildfire_records = fetch_region_records(region)
+        regional_records.append((region, risk_records, wildfire_records))
 
-    records = fetch_scores(args.region)
-    print_banner(args.region, args.months, args.mode)
+    peaks = add_un_m49_groups(build_hazard_peaks(regional_records, args.months))
+    selected = select_hazard_watchlist(peaks)
+    presentation = build_presentation_watchlist(selected)
+    print_report(presentation, args.months)
 
-    ind_df   = pd.DataFrame()
-    comb_df  = pd.DataFrame()
-
-    # ── Individual mode ───────────────────────────────────────────────────────
-    if args.mode in ("individual", "both"):
-        ind_df = build_individual_df(records, args.months)
-        for hazard in ("DR", "FL", "TC"):
-            print_individual_section(ind_df, hazard, args.months, args.show_medium)
-
-    # ── Combined mode ─────────────────────────────────────────────────────────
-    if args.mode in ("combined", "both"):
-        comb_df = build_combined_df(records, args.months)
-        for cat in ("DR+WF", "FL+TC"):
-            print_combined_section(comb_df, cat, args.months, args.show_medium)
-
-    # ── Summary ───────────────────────────────────────────────────────────────
-    print_summary(ind_df, comb_df, args.months)
-
-    # ── File outputs ──────────────────────────────────────────────────────────
-    if args.output in ("excel", "all"):
-        try:
-            export_excel(ind_df, comb_df, args.region, args.months, output_dir)
-        except Exception as exc:
-            print(f"  ⚠️  Excel export failed: {exc}")
-
-    if args.output in ("csv", "all"):
-        export_csv(ind_df, comb_df, args.region, args.months, output_dir)
-
-    print()
+    if args.output in ("excel", "all", "csv", "markdown"):
+        output_dir = Path(args.output_dir)
+        output_dir.mkdir(parents=True, exist_ok=True)
+        if args.output in ("excel", "all"):
+            export_excel(presentation, selected, peaks, regions, args.months, output_dir)
+        if args.output in ("csv", "all"):
+            export_csv(presentation, selected, peaks, regions, args.months, output_dir)
+        if args.output in ("markdown", "all"):
+            export_markdown(presentation, regions, args.months, output_dir)
 
 
 if __name__ == "__main__":
