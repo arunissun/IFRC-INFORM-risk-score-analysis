@@ -1,0 +1,98 @@
+name: Monthly DREF risk and disease analysis
+
+on:
+  schedule:
+    - cron: "17 6 5 * *"
+      timezone: "Europe/Budapest"
+  workflow_dispatch:
+    inputs:
+      analysis_date:
+        description: "Optional analysis date in YYYY-MM-DD format; blank uses the 5th of the current month"
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: monthly-dref-analysis
+  cancel-in-progress: false
+
+jobs:
+  analyse:
+    name: Build monthly analysis
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v8
+        with:
+          enable-cache: true
+
+      - name: Install Python dependencies
+        run: uv sync
+
+      - name: Determine analysis period
+        id: period
+        env:
+          REQUESTED_DATE: ${{ inputs.analysis_date }}
+        run: |
+          uv run python - <<'PY'
+          import os
+          from datetime import date
+
+          requested = os.environ.get("REQUESTED_DATE", "").strip()
+          analysis_date = date.fromisoformat(requested) if requested else date.today().replace(day=5)
+          folder = analysis_date.strftime("%Y-%m_%B")
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              output.write(f"analysis_date={analysis_date.isoformat()}\n")
+              output.write(f"folder={folder}\n")
+          PY
+
+      - name: Run code self-checks
+        run: |
+          uv run dref_analysis.py --self-check
+          uv run disease_outbreak_analysis.py --self-check
+
+      - name: Build seasonal risk-score analysis
+        run: |
+          uv run dref_analysis.py \
+            --region all \
+            --analysis-date "${{ steps.period.outputs.analysis_date }}" \
+            --output all \
+            --monthly-folder
+
+      - name: Build disease-outbreak analysis
+        run: |
+          uv run disease_outbreak_analysis.py \
+            --region all \
+            --as-of "${{ steps.period.outputs.analysis_date }}" \
+            --output all \
+            --monthly-folder
+
+      - name: Validate monthly outputs
+        env:
+          MONTH_FOLDER: ${{ steps.period.outputs.folder }}
+        run: |
+          risk_dir="outputs/risk_scores/${MONTH_FOLDER}"
+          disease_dir="outputs/disease_outbreaks/${MONTH_FOLDER}"
+
+          test "$(find "$risk_dir" -maxdepth 1 -type f | wc -l)" -eq 3
+          test "$(find "$disease_dir" -maxdepth 1 -type f | wc -l)" -eq 3
+          find "$risk_dir" -maxdepth 1 -type f -print
+          find "$disease_dir" -maxdepth 1 -type f -print
+
+      - name: Upload monthly analysis
+        uses: actions/upload-artifact@v6
+        with:
+          name: dref-analysis-${{ steps.period.outputs.analysis_date }}
+          path: |
+            outputs/risk_scores/${{ steps.period.outputs.folder }}
+            outputs/disease_outbreaks/${{ steps.period.outputs.folder }}
+          if-no-files-found: error
+          retention-days: 90
