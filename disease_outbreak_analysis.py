@@ -681,6 +681,12 @@ def export_markdown(presentation: pd.DataFrame, regions: list[int], as_of: date,
         "- WHO/CDC outbreak-priority screening; not an INFORM index or disease forecast.",
         "- CDC Level 2 is Orange-only; CDC Level 1 is excluded from presentation selection.",
     ]
+    if as_of < date.today():
+        lines.append(
+            "- Historical CDC limitation: this reconstructs the cut-off from notices still "
+            "present in the current CDC RSS feed; notices removed or superseded before "
+            "retrieval may be missing."
+        )
     for region_code in regions:
         lines.extend(["", f"## {REGION_NAMES[region_code]}"])
         regional = presentation[presentation["Region Code"] == region_code] if not presentation.empty else presentation
@@ -718,6 +724,11 @@ def export_raw_snapshot(
         "as_of": as_of.isoformat(),
         "retrieved_at": retrieved_at,
         "sources": {"who": WHO_DON_URL, "cdc": CDC_RSS_URL},
+        "cdc_historical_limitation": (
+            "Historical cut-off reconstructed from notices still present in the current "
+            "CDC RSS feed; removed or superseded notices may be missing."
+            if as_of < date.today() else None
+        ),
         "who_reports": raw_who_reports,
         "cdc_notices": raw_cdc_notices,
     }
@@ -784,6 +795,11 @@ def parse_args() -> argparse.Namespace:
         "--output-dir", default="outputs/disease_outbreaks",
         help="Folder for saved files (default: outputs/disease_outbreaks)",
     )
+    parser.add_argument(
+        "--monthly-folder",
+        action="store_true",
+        help="Write files inside a YYYY-MM_Month folder based on --as-of",
+    )
     parser.add_argument("--self-check", action="store_true", help="Run checks without calling the sources")
     return parser.parse_args()
 
@@ -826,6 +842,8 @@ def main() -> None:
 
     if args.output in {"raw", "csv", "markdown", "all"}:
         output_dir = Path(args.output_dir)
+        if args.monthly_folder:
+            output_dir /= as_of.strftime("%Y-%m_%B")
         output_dir.mkdir(parents=True, exist_ok=True)
         if args.output in {"raw", "all"}:
             export_raw_snapshot(raw_who_reports, raw_cdc_notices, as_of, retrieved_at, output_dir)
