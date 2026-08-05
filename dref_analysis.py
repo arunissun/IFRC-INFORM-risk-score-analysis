@@ -23,7 +23,7 @@ Run, for example:
 
 import argparse
 import sys
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 
 import pandas as pd
@@ -79,6 +79,11 @@ AGGREGATE_REGION_NAMES = set(REGION_NAMES.values()) | {
 def month_key(month: int) -> str:
     """Return the lower-case API field name for a month number."""
     return MONTH_NAMES[month].lower()
+
+
+def rolling_months(analysis_date: date) -> list[int]:
+    """Return the three-month window ending in the analysis month."""
+    return [((analysis_date.month - offset - 1) % 12) + 1 for offset in (2, 1, 0)]
 
 
 def classify_score(hazard: str, score: float) -> str:
@@ -574,23 +579,15 @@ def export_excel(
 
 
 def export_csv(
-    presentation: pd.DataFrame,
-    selected: pd.DataFrame,
     peaks: pd.DataFrame,
     regions: list[int],
     months: list[int],
     output_dir: Path,
 ) -> None:
-    """Export the same three tables as CSV files."""
-    stem = file_stem(regions, months)
-    for suffix, dataframe in (
-        ("presentation", presentation),
-        ("hazard_selections", selected),
-        ("all_hazard_peaks", peaks),
-    ):
-        path = output_dir / f"{stem}_{suffix}.csv"
-        dataframe.to_csv(path, index=False)
-        print(f"CSV written: {path}")
+    """Export one machine-readable audit table; other views remain in Excel."""
+    path = output_dir / f"{file_stem(regions, months)}_all_hazard_peaks.csv"
+    peaks.to_csv(path, index=False)
+    print(f"CSV written: {path}")
 
 
 def export_markdown(
@@ -703,9 +700,14 @@ def parse_args() -> argparse.Namespace:
         help="all (default), 0=Africa, 1=Americas, 2=Asia-Pacific, 3=Europe, 4=MENA",
     )
     parser.add_argument(
-        "--months", "-m", type=int, nargs=3, default=[6, 7, 8],
+        "--months", "-m", type=int, nargs=3,
         metavar=("M1", "M2", "M3"),
-        help="Three-month watch window, e.g. --months 6 7 8 (default: June July August)",
+        help="Three-month watch window; defaults to the window ending in --analysis-date",
+    )
+    parser.add_argument(
+        "--analysis-date",
+        default=date.today().isoformat(),
+        help="Analysis date in YYYY-MM-DD format (default: today)",
     )
     parser.add_argument(
         "--output", "-o", default="console", choices=["console", "excel", "csv", "markdown", "all"],
@@ -715,6 +717,11 @@ def parse_args() -> argparse.Namespace:
         "--output-dir",
         default="outputs/risk_scores",
         help="Folder for saved files (default: outputs/risk_scores)",
+    )
+    parser.add_argument(
+        "--monthly-folder",
+        action="store_true",
+        help="Write files inside a YYYY-MM_Month folder based on --analysis-date",
     )
     parser.add_argument("--self-check", action="store_true", help="Run checks without calling the APIs")
     return parser.parse_args()
@@ -726,7 +733,14 @@ def main() -> None:
         run_self_check()
         return
 
-    if any(not 1 <= month <= 12 for month in args.months):
+    try:
+        analysis_date = date.fromisoformat(args.analysis_date)
+    except ValueError:
+        print("--analysis-date must use YYYY-MM-DD format.", file=sys.stderr)
+        sys.exit(2)
+
+    months = args.months or rolling_months(analysis_date)
+    if any(not 1 <= month <= 12 for month in months):
         print("Months must be integers from 1 to 12.", file=sys.stderr)
         sys.exit(2)
 
@@ -736,20 +750,22 @@ def main() -> None:
         risk_records, wildfire_records = fetch_region_records(region)
         regional_records.append((region, risk_records, wildfire_records))
 
-    peaks = add_un_m49_groups(build_hazard_peaks(regional_records, args.months))
+    peaks = add_un_m49_groups(build_hazard_peaks(regional_records, months))
     selected = select_hazard_watchlist(peaks)
     presentation = build_presentation_watchlist(selected)
-    print_report(presentation, args.months)
+    print_report(presentation, months)
 
     if args.output in ("excel", "all", "csv", "markdown"):
         output_dir = Path(args.output_dir)
+        if args.monthly_folder:
+            output_dir /= analysis_date.strftime("%Y-%m_%B")
         output_dir.mkdir(parents=True, exist_ok=True)
         if args.output in ("excel", "all"):
-            export_excel(presentation, selected, peaks, regions, args.months, output_dir)
+            export_excel(presentation, selected, peaks, regions, months, output_dir)
         if args.output in ("csv", "all"):
-            export_csv(presentation, selected, peaks, regions, args.months, output_dir)
+            export_csv(peaks, regions, months, output_dir)
         if args.output in ("markdown", "all"):
-            export_markdown(presentation, regions, args.months, output_dir)
+            export_markdown(presentation, regions, months, output_dir)
 
 
 if __name__ == "__main__":
