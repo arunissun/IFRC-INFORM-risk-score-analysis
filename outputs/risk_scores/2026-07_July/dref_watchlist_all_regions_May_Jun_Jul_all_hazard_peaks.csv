@@ -1,0 +1,750 @@
+Region Code,Region,Group,Country,ISO3,Hazard,Hazard Label,Source,Peak Score,Peak Month,Risk Category,Months in Risk Category,High or Very High Months,May,June,July,UN Subregion,UN Intermediate Region,UN Regional Group
+0,Africa,Drought/Wildfire,Somalia,SOM,DR,Drought,INFORM risk-score API,9.9,June,Very High,3,3,9.7,9.9,8.5,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Eritrea,ERI,DR,Drought,INFORM risk-score API,8.1,July,Very High,1,1,3.3,3.8,8.1,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Mauritania,MRT,DR,Drought,INFORM risk-score API,7.9,July,Very High,1,1,4.2,4.2,7.9,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,South Africa,ZAF,DR,Drought,INFORM risk-score API,7.0,May,Very High,1,2,7.0,6.1,4.9,Sub-Saharan Africa,Southern Africa,Southern Africa
+0,Africa,Drought/Wildfire,Senegal,SEN,DR,Drought,INFORM risk-score API,6.6,July,Very High,1,1,2.9,3.9,6.6,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Zimbabwe,ZWE,DR,Drought,INFORM risk-score API,6.5,May,High,2,2,6.5,5.7,4.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Niger,NER,DR,Drought,INFORM risk-score API,6.3,July,High,1,1,4.7,4.9,6.3,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Kenya,KEN,DR,Drought,INFORM risk-score API,6.2,May,High,3,3,6.2,5.9,5.7,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Burkina Faso,BFA,DR,Drought,INFORM risk-score API,5.8,July,High,2,2,4.9,5.4,5.8,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Ethiopia,ETH,DR,Drought,INFORM risk-score API,5.7,May,High,3,3,5.7,5.7,5.5,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Botswana,BWA,DR,Drought,INFORM risk-score API,5.7,May,High,1,1,5.7,3.4,1.5,Sub-Saharan Africa,Southern Africa,Southern Africa
+0,Africa,Drought/Wildfire,Chad,TCD,DR,Drought,INFORM risk-score API,5.6,July,High,2,2,4.2,5.2,5.6,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Drought/Wildfire,Sudan,SDN,DR,Drought,INFORM risk-score API,5.5,July,High,1,1,4.0,4.4,5.5,Northern Africa,,Northern Africa
+0,Africa,Drought/Wildfire,Namibia,NAM,DR,Drought,INFORM risk-score API,5.4,May,High,1,1,5.4,4.3,3.9,Sub-Saharan Africa,Southern Africa,Southern Africa
+0,Africa,Drought/Wildfire,Mali,MLI,DR,Drought,INFORM risk-score API,5.0,July,Medium,3,0,3.8,4.5,5.0,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Mozambique,MOZ,DR,Drought,INFORM risk-score API,5.0,May,Medium,3,0,5.0,4.9,4.7,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Uganda,UGA,DR,Drought,INFORM risk-score API,4.5,May,Medium,3,0,4.5,4.1,4.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Lesotho,LSO,DR,Drought,INFORM risk-score API,4.4,May,Medium,3,0,4.4,3.9,3.7,Sub-Saharan Africa,Southern Africa,Southern Africa
+0,Africa,Drought/Wildfire,Malawi,MWI,DR,Drought,INFORM risk-score API,4.4,May,Medium,3,0,4.4,4.4,4.4,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,"Tanzania, United Republic of",TZA,DR,Drought,INFORM risk-score API,4.3,May,Medium,3,0,4.3,4.2,4.1,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Djibouti,DJI,DR,Drought,INFORM risk-score API,4.1,May,Medium,3,0,4.1,4.1,4.1,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Madagascar,MDG,DR,Drought,INFORM risk-score API,4.1,May,Medium,3,0,4.1,4.0,4.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Angola,AGO,DR,Drought,INFORM risk-score API,3.9,May,Medium,3,0,3.9,3.9,3.8,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Drought/Wildfire,"Eswatini, Kingdom of",SWZ,DR,Drought,INFORM risk-score API,3.7,May,Medium,3,0,3.7,3.7,3.7,Sub-Saharan Africa,Southern Africa,Southern Africa
+0,Africa,Drought/Wildfire,South Sudan,SSD,DR,Drought,INFORM risk-score API,3.7,June,Medium,2,0,3.5,3.7,3.6,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Burundi,BDI,DR,Drought,INFORM risk-score API,3.4,May,Low,3,0,3.4,3.4,3.4,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Rwanda,RWA,DR,Drought,INFORM risk-score API,3.4,May,Low,3,0,3.4,3.1,3.1,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,"Gambia, Republic of The",GMB,DR,Drought,INFORM risk-score API,3.1,July,Low,3,0,2.2,2.6,3.1,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Cameroon,CMR,DR,Drought,INFORM risk-score API,3.0,May,Low,3,0,3.0,3.0,2.7,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Drought/Wildfire,Zambia,ZMB,DR,Drought,INFORM risk-score API,2.8,May,Low,3,0,2.8,2.8,2.8,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Togo,TGO,DR,Drought,INFORM risk-score API,2.2,May,Low,1,0,2.2,1.9,1.8,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Guinea-Bissau,GNB,DR,Drought,INFORM risk-score API,2.0,June,Very Low,3,0,1.5,2.0,2.0,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Cabo Verde,CPV,DR,Drought,INFORM risk-score API,1.6,May,Very Low,3,0,1.6,1.6,1.6,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Democratic Republic of Congo,COD,DR,Drought,INFORM risk-score API,1.4,May,Very Low,3,0,1.4,1.4,1.4,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Drought/Wildfire,Gabon,GAB,DR,Drought,INFORM risk-score API,0.9,June,Very Low,3,0,0.3,0.9,0.9,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Drought/Wildfire,Ghana,GHA,DR,Drought,INFORM risk-score API,0.8,May,Very Low,3,0,0.8,0.6,0.5,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Guinea,GIN,DR,Drought,INFORM risk-score API,0.8,June,Very Low,3,0,0.7,0.8,0.6,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Benin,BEN,DR,Drought,INFORM risk-score API,0.4,May,Very Low,3,0,0.4,0.2,0.2,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Nigeria,NGA,DR,Drought,INFORM risk-score API,0.4,May,Very Low,3,0,0.4,0.4,0.4,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Central African Republic,CAF,DR,Drought,INFORM risk-score API,0.3,May,Very Low,3,0,0.3,0.1,0.0,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Drought/Wildfire,Congo,COG,DR,Drought,INFORM risk-score API,0.3,June,Very Low,3,0,0.2,0.3,0.3,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Drought/Wildfire,Côte d'Ivoire,CIV,DR,Drought,INFORM risk-score API,0.3,May,Very Low,3,0,0.3,0.2,0.1,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Mauritius,MUS,DR,Drought,INFORM risk-score API,0.3,May,Very Low,3,0,0.3,0.3,0.3,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Liberia,LBR,DR,Drought,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.0,0.0,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Comoros,COM,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Equatorial Guinea,GNQ,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Drought/Wildfire,Sao Tome and Principe,STP,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Drought/Wildfire,Seychelles,SYC,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Sierra Leone,SLE,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Niger,NER,FL,Flood,INFORM risk-score API,6.5,July,High,1,1,0.0,4.6,6.5,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Liberia,LBR,FL,Flood,INFORM risk-score API,6.2,July,High,1,1,0.0,4.1,6.2,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Central African Republic,CAF,FL,Flood,INFORM risk-score API,5.7,July,High,1,1,0.0,0.0,5.7,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Floods/TC,Côte d'Ivoire,CIV,FL,Flood,INFORM risk-score API,5.6,June,High,1,1,0.0,5.6,2.8,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Kenya,KEN,FL,Flood,INFORM risk-score API,5.6,May,High,1,1,5.6,1.1,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Benin,BEN,FL,Flood,INFORM risk-score API,5.1,July,High,1,1,0.0,2.0,5.1,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,"Tanzania, United Republic of",TZA,FL,Flood,INFORM risk-score API,5.0,May,Medium,1,0,5.0,0.0,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Ghana,GHA,FL,Flood,INFORM risk-score API,4.9,June,Medium,2,0,0.0,4.9,4.1,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Gabon,GAB,FL,Flood,INFORM risk-score API,4.8,June,Medium,1,0,0.0,4.8,0.0,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Floods/TC,Burkina Faso,BFA,FL,Flood,INFORM risk-score API,4.6,July,Medium,1,0,0.0,2.3,4.6,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Nigeria,NGA,FL,Flood,INFORM risk-score API,4.3,July,Medium,2,0,0.6,3.7,4.3,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Sudan,SDN,FL,Flood,INFORM risk-score API,4.3,July,Medium,1,0,0.0,1.8,4.3,Northern Africa,,Northern Africa
+0,Africa,Floods/TC,Somalia,SOM,FL,Flood,INFORM risk-score API,4.2,May,Medium,1,0,4.2,1.7,0.8,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Uganda,UGA,FL,Flood,INFORM risk-score API,3.8,May,Medium,1,0,3.8,1.3,1.3,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Burundi,BDI,FL,Flood,INFORM risk-score API,3.7,May,Medium,1,0,3.7,0.7,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,"Gambia, Republic of The",GMB,FL,Flood,INFORM risk-score API,3.5,July,Low,1,0,0.0,0.0,3.5,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Guinea-Bissau,GNB,FL,Flood,INFORM risk-score API,3.3,July,Low,1,0,0.0,0.0,3.3,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,South Africa,ZAF,FL,Flood,INFORM risk-score API,3.3,July,Low,1,0,0.8,0.8,3.3,Sub-Saharan Africa,Southern Africa,Southern Africa
+0,Africa,Floods/TC,Eritrea,ERI,FL,Flood,INFORM risk-score API,3.1,July,Low,1,0,0.0,0.0,3.1,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Togo,TGO,FL,Flood,INFORM risk-score API,2.9,June,Low,2,0,0.0,2.9,2.9,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,South Sudan,SSD,FL,Flood,INFORM risk-score API,2.8,July,Low,1,0,0.0,0.0,2.8,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Zambia,ZMB,FL,Flood,INFORM risk-score API,2.8,May,Low,1,0,2.8,0.9,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Guinea,GIN,FL,Flood,INFORM risk-score API,2.6,July,Low,1,0,0.0,0.0,2.6,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Mali,MLI,FL,Flood,INFORM risk-score API,2.5,July,Low,1,0,0.6,0.6,2.5,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Chad,TCD,FL,Flood,INFORM risk-score API,2.1,July,Low,1,0,0.0,0.0,2.1,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Floods/TC,Ethiopia,ETH,FL,Flood,INFORM risk-score API,2.1,May,Low,1,0,2.1,1.0,1.6,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Cameroon,CMR,FL,Flood,INFORM risk-score API,1.7,June,Very Low,3,0,0.0,1.7,1.7,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Floods/TC,Namibia,NAM,FL,Flood,INFORM risk-score API,1.7,May,Very Low,3,0,1.7,0.9,0.0,Sub-Saharan Africa,Southern Africa,Southern Africa
+0,Africa,Floods/TC,Rwanda,RWA,FL,Flood,INFORM risk-score API,1.3,May,Very Low,3,0,1.3,0.0,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Botswana,BWA,FL,Flood,INFORM risk-score API,1.2,May,Very Low,3,0,1.2,1.2,1.2,Sub-Saharan Africa,Southern Africa,Southern Africa
+0,Africa,Floods/TC,Senegal,SEN,FL,Flood,INFORM risk-score API,1.2,July,Very Low,3,0,0.0,0.0,1.2,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Mauritania,MRT,FL,Flood,INFORM risk-score API,1.1,July,Very Low,3,0,0.0,0.0,1.1,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Democratic Republic of Congo,COD,FL,Flood,INFORM risk-score API,0.9,May,Very Low,3,0,0.9,0.0,0.9,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Floods/TC,Sierra Leone,SLE,FL,Flood,INFORM risk-score API,0.9,July,Very Low,3,0,0.0,0.0,0.9,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Angola,AGO,FL,Flood,INFORM risk-score API,0.6,May,Very Low,3,0,0.6,0.3,0.0,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Floods/TC,Malawi,MWI,FL,Flood,INFORM risk-score API,0.5,May,Very Low,3,0,0.5,0.0,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Mozambique,MOZ,FL,Flood,INFORM risk-score API,0.4,May,Very Low,3,0,0.4,0.0,0.4,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Cabo Verde,CPV,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Comoros,COM,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Mauritius,MUS,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Sao Tome and Principe,STP,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Floods/TC,Seychelles,SYC,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Congo,COG,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Floods/TC,Djibouti,DJI,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Equatorial Guinea,GNQ,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Floods/TC,"Eswatini, Kingdom of",SWZ,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Southern Africa,Southern Africa
+0,Africa,Floods/TC,Lesotho,LSO,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Southern Africa,Southern Africa
+0,Africa,Floods/TC,Madagascar,MDG,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Zimbabwe,ZWE,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Madagascar,MDG,TC,Tropical Cyclone,INFORM risk-score API,0.6,May,Very Low,3,0,0.6,0.1,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Mauritius,MUS,TC,Tropical Cyclone,INFORM risk-score API,0.5,May,Very Low,3,0,0.5,0.1,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Mozambique,MOZ,TC,Tropical Cyclone,INFORM risk-score API,0.4,May,Very Low,3,0,0.4,0.1,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Comoros,COM,TC,Tropical Cyclone,INFORM risk-score API,0.2,May,Very Low,3,0,0.2,0.1,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Malawi,MWI,TC,Tropical Cyclone,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Somalia,SOM,TC,Tropical Cyclone,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.0,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,South Africa,ZAF,TC,Tropical Cyclone,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.0,0.0,Sub-Saharan Africa,Southern Africa,Southern Africa
+0,Africa,Floods/TC,"Tanzania, United Republic of",TZA,TC,Tropical Cyclone,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.0,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Zimbabwe,ZWE,TC,Tropical Cyclone,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.0,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Angola,AGO,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Floods/TC,Benin,BEN,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Botswana,BWA,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Southern Africa,Southern Africa
+0,Africa,Floods/TC,Burkina Faso,BFA,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Burundi,BDI,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Cabo Verde,CPV,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Cameroon,CMR,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Floods/TC,Central African Republic,CAF,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Floods/TC,Chad,TCD,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Floods/TC,Congo,COG,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Floods/TC,Côte d'Ivoire,CIV,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Democratic Republic of Congo,COD,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Floods/TC,Djibouti,DJI,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Equatorial Guinea,GNQ,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Floods/TC,Eritrea,ERI,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,"Eswatini, Kingdom of",SWZ,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Southern Africa,Southern Africa
+0,Africa,Floods/TC,Ethiopia,ETH,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Gabon,GAB,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Floods/TC,"Gambia, Republic of The",GMB,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Ghana,GHA,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Guinea,GIN,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Guinea-Bissau,GNB,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Kenya,KEN,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Lesotho,LSO,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Southern Africa,Southern Africa
+0,Africa,Floods/TC,Liberia,LBR,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Mali,MLI,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Mauritania,MRT,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Namibia,NAM,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Southern Africa,Southern Africa
+0,Africa,Floods/TC,Niger,NER,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Nigeria,NGA,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Rwanda,RWA,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Sao Tome and Principe,STP,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Floods/TC,Senegal,SEN,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Seychelles,SYC,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Sierra Leone,SLE,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,South Sudan,SSD,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Sudan,SDN,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Africa,,Northern Africa
+0,Africa,Floods/TC,Togo,TGO,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Floods/TC,Uganda,UGA,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Floods/TC,Zambia,ZMB,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Mauritania,MRT,WF,Wildfire,GWIS seasonal API,69.75,May,Very High,3,3,69.74695,56.887402608695645,33.423269999999995,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Somalia,SOM,WF,Wildfire,GWIS seasonal API,62.31,July,Very High,2,3,13.394970434782609,46.40415782608696,62.30937739130435,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Niger,NER,WF,Wildfire,GWIS seasonal API,51.19,May,Very High,3,3,51.19343739130436,35.633676521739126,21.865506086956522,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Djibouti,DJI,WF,Wildfire,GWIS seasonal API,42.36,June,Very High,3,3,23.030448260869562,42.363991739130434,33.59178260869565,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Sudan,SDN,WF,Wildfire,GWIS seasonal API,42.24,May,Very High,2,3,42.23832217391304,28.09293086956522,15.11413043478261,Northern Africa,,Northern Africa
+0,Africa,Drought/Wildfire,Mali,MLI,WF,Wildfire,GWIS seasonal API,39.99,May,Very High,2,3,39.99075434782609,26.26544608695652,11.300868260869564,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Senegal,SEN,WF,Wildfire,GWIS seasonal API,38.56,May,Very High,2,3,38.55971869565217,24.788813478260867,9.861666086956522,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Namibia,NAM,WF,Wildfire,GWIS seasonal API,37.9,July,Very High,3,3,31.39673043478261,34.15309347826087,37.90199434782608,Sub-Saharan Africa,Southern Africa,Southern Africa
+0,Africa,Drought/Wildfire,Chad,TCD,WF,Wildfire,GWIS seasonal API,36.3,May,Very High,2,3,36.295635652173914,21.185301739130438,9.04531,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Drought/Wildfire,Eritrea,ERI,WF,Wildfire,GWIS seasonal API,28.91,June,Very High,2,3,28.564325217391303,28.910446956521742,14.787116521739131,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Angola,AGO,WF,Wildfire,GWIS seasonal API,26.41,July,Very High,2,3,11.738365217391303,21.183466956521738,26.407794347826087,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Drought/Wildfire,Botswana,BWA,WF,Wildfire,GWIS seasonal API,24.02,July,Very High,3,3,20.433921739130437,20.90467304347826,24.024571304347827,Sub-Saharan Africa,Southern Africa,Southern Africa
+0,Africa,Drought/Wildfire,Burkina Faso,BFA,WF,Wildfire,GWIS seasonal API,21.1,May,Very High,1,2,21.10259565217391,11.76108304347826,3.611706956521739,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Zambia,ZMB,WF,Wildfire,GWIS seasonal API,18.65,July,Very High,1,3,9.035359130434783,14.886929130434781,18.64940304347826,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Ethiopia,ETH,WF,Wildfire,GWIS seasonal API,15.55,July,High,2,2,7.9039786956521745,14.486801304347827,15.547612608695653,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Zimbabwe,ZWE,WF,Wildfire,GWIS seasonal API,15.25,July,High,3,3,10.065860869565217,12.57153739130435,15.2474,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,South Africa,ZAF,WF,Wildfire,GWIS seasonal API,14.93,July,High,3,3,12.364334347826086,12.301091304347825,14.930845217391305,Sub-Saharan Africa,Southern Africa,Southern Africa
+0,Africa,Drought/Wildfire,Guinea-Bissau,GNB,WF,Wildfire,GWIS seasonal API,14.76,May,High,1,1,14.764156956521738,5.110555217391304,0.13926608695652173,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,"Tanzania, United Republic of",TZA,WF,Wildfire,GWIS seasonal API,14.53,July,High,2,2,4.337859565217392,10.23322347826087,14.525273913043478,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Cabo Verde,CPV,WF,Wildfire,GWIS seasonal API,12.46,May,High,2,2,12.462309130434782,10.099072173913044,7.212296521739131,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Nigeria,NGA,WF,Wildfire,GWIS seasonal API,12.06,May,High,1,1,12.05759347826087,5.989051739130434,1.9021034782608695,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Mauritius,MUS,WF,Wildfire,GWIS seasonal API,10.8,July,High,1,1,4.343620434782609,8.770222608695653,10.798952173913044,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Madagascar,MDG,WF,Wildfire,GWIS seasonal API,10.71,July,High,1,1,5.4996478260869575,8.359461304347827,10.707041739130434,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Mozambique,MOZ,WF,Wildfire,GWIS seasonal API,10.03,July,High,1,1,6.0057208695652164,8.475114782608696,10.034907391304348,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Democratic Republic of Congo,COD,WF,Wildfire,GWIS seasonal API,9.97,July,High,1,1,2.2515447826086956,6.981052608695652,9.970495217391305,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Drought/Wildfire,Rwanda,RWA,WF,Wildfire,GWIS seasonal API,9.96,July,High,1,1,1.3608247826086957,4.979366521739131,9.960155652173913,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,"Eswatini, Kingdom of",SWZ,WF,Wildfire,GWIS seasonal API,9.72,July,High,1,1,4.201755217391304,7.482152173913043,9.722502173913044,Sub-Saharan Africa,Southern Africa,Southern Africa
+0,Africa,Drought/Wildfire,Malawi,MWI,WF,Wildfire,GWIS seasonal API,9.53,July,High,1,1,4.838865217391304,7.614281739130434,9.531454782608694,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Burundi,BDI,WF,Wildfire,GWIS seasonal API,9.27,July,High,1,1,1.149273043478261,4.2923599999999995,9.269428260869564,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,"Gambia, Republic of The",GMB,WF,Wildfire,GWIS seasonal API,8.82,May,Medium,2,0,8.821813043478262,7.507181739130434,2.2537156521739132,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,South Sudan,SSD,WF,Wildfire,GWIS seasonal API,7.4,May,Medium,1,0,7.404848695652174,3.5131160869565217,1.3182247826086957,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Benin,BEN,WF,Wildfire,GWIS seasonal API,6.61,May,Medium,1,0,6.612217391304348,2.6685660869565218,0.6657004347826087,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Guinea,GIN,WF,Wildfire,GWIS seasonal API,5.67,May,Medium,1,0,5.674888695652173,0.6822147826086957,0.02680782608695652,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Lesotho,LSO,WF,Wildfire,GWIS seasonal API,5.22,July,Medium,1,0,2.711008695652174,3.7325126086956524,5.215510869565217,Sub-Saharan Africa,Southern Africa,Southern Africa
+0,Africa,Drought/Wildfire,Togo,TGO,WF,Wildfire,GWIS seasonal API,3.04,May,Low,1,0,3.040764347826087,1.5146339130434785,0.33492782608695654,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Comoros,COM,WF,Wildfire,GWIS seasonal API,3.03,July,Low,1,0,0.7409521739130434,1.8384734782608698,3.0311952173913044,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Ghana,GHA,WF,Wildfire,GWIS seasonal API,2.86,May,Low,1,0,2.862767391304348,1.241511304347826,0.33376260869565216,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Uganda,UGA,WF,Wildfire,GWIS seasonal API,2.49,July,Low,1,0,0.9029965217391305,1.6671239130434785,2.493916956521739,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Central African Republic,CAF,WF,Wildfire,GWIS seasonal API,2.12,May,Low,1,0,2.119711304347826,0.5775304347826087,0.09852782608695652,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Drought/Wildfire,Cameroon,CMR,WF,Wildfire,GWIS seasonal API,1.89,May,Very Low,3,0,1.8925699999999999,0.7011021739130435,0.2150791304347826,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Drought/Wildfire,Congo,COG,WF,Wildfire,GWIS seasonal API,1.87,July,Very Low,3,0,0.1401195652173913,0.8154908695652174,1.8718734782608695,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Drought/Wildfire,Sao Tome and Principe,STP,WF,Wildfire,GWIS seasonal API,1.85,July,Very Low,3,0,0.17802434782608698,0.8825191304347826,1.8508821739130434,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Drought/Wildfire,Gabon,GAB,WF,Wildfire,GWIS seasonal API,1.18,July,Very Low,3,0,0.040467826086956524,0.3645282608695652,1.1752247826086957,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Drought/Wildfire,Côte d'Ivoire,CIV,WF,Wildfire,GWIS seasonal API,0.82,May,Very Low,3,0,0.8158786956521739,0.35149478260869566,0.1466008695652174,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Sierra Leone,SLE,WF,Wildfire,GWIS seasonal API,0.75,May,Very Low,3,0,0.7454934782608695,0.01452304347826087,0.0011882608695652174,Sub-Saharan Africa,Western Africa,Western Africa
+0,Africa,Drought/Wildfire,Seychelles,SYC,WF,Wildfire,GWIS seasonal API,0.42,July,Very Low,3,0,0.2990965217391304,0.3806391304347826,0.4195173913043479,Sub-Saharan Africa,Eastern Africa,Eastern Africa
+0,Africa,Drought/Wildfire,Equatorial Guinea,GNQ,WF,Wildfire,GWIS seasonal API,0.1,July,Very Low,3,0,0.0025826086956521736,0.019479565217391304,0.09509434782608696,Sub-Saharan Africa,Middle Africa,Middle Africa
+0,Africa,Drought/Wildfire,Liberia,LBR,WF,Wildfire,GWIS seasonal API,0.02,July,Very Low,3,0,0.013863043478260869,0.002940869565217391,0.01818695652173913,Sub-Saharan Africa,Western Africa,Western Africa
+1,Americas,Drought/Wildfire,Cuba,CUB,DR,Drought,INFORM risk-score API,4.9,May,Medium,2,0,4.9,4.2,3.5,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Honduras,HND,DR,Drought,INFORM risk-score API,4.6,May,Medium,3,0,4.6,4.5,4.3,Latin America and the Caribbean,Central America,Central America
+1,Americas,Drought/Wildfire,Brazil,BRA,DR,Drought,INFORM risk-score API,4.5,May,Medium,3,0,4.5,4.5,4.5,Latin America and the Caribbean,South America,South America
+1,Americas,Drought/Wildfire,Bolivia,BOL,DR,Drought,INFORM risk-score API,4.1,May,Medium,3,0,4.1,4.1,4.1,Latin America and the Caribbean,South America,South America
+1,Americas,Drought/Wildfire,Nicaragua,NIC,DR,Drought,INFORM risk-score API,4.1,May,Medium,3,0,4.1,4.1,3.8,Latin America and the Caribbean,Central America,Central America
+1,Americas,Drought/Wildfire,Canada,CAN,DR,Drought,INFORM risk-score API,4.0,May,Medium,1,0,4.0,3.4,2.3,Northern America,,Northern America
+1,Americas,Drought/Wildfire,Haiti,HTI,DR,Drought,INFORM risk-score API,3.9,May,Medium,2,0,3.9,3.7,3.4,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,United States,USA,DR,Drought,INFORM risk-score API,3.9,July,Medium,2,0,3.8,3.4,3.9,Northern America,,Northern America
+1,Americas,Drought/Wildfire,Guatemala,GTM,DR,Drought,INFORM risk-score API,3.8,May,Medium,3,0,3.8,3.8,3.8,Latin America and the Caribbean,Central America,Central America
+1,Americas,Drought/Wildfire,Mexico,MEX,DR,Drought,INFORM risk-score API,3.8,June,Medium,3,0,3.6,3.8,3.7,Latin America and the Caribbean,Central America,Central America
+1,Americas,Drought/Wildfire,Peru,PER,DR,Drought,INFORM risk-score API,3.7,May,Medium,2,0,3.7,3.7,3.5,Latin America and the Caribbean,South America,South America
+1,Americas,Drought/Wildfire,El Salvador,SLV,DR,Drought,INFORM risk-score API,3.6,May,Medium,1,0,3.6,3.3,3.2,Latin America and the Caribbean,Central America,Central America
+1,Americas,Drought/Wildfire,Guyana,GUY,DR,Drought,INFORM risk-score API,3.6,May,Medium,3,0,3.6,3.6,3.6,Latin America and the Caribbean,South America,South America
+1,Americas,Drought/Wildfire,Paraguay,PRY,DR,Drought,INFORM risk-score API,3.5,May,Low,3,0,3.5,3.5,3.5,Latin America and the Caribbean,South America,South America
+1,Americas,Drought/Wildfire,Ecuador,ECU,DR,Drought,INFORM risk-score API,2.5,May,Low,3,0,2.5,2.4,2.2,Latin America and the Caribbean,South America,South America
+1,Americas,Drought/Wildfire,Uruguay,URY,DR,Drought,INFORM risk-score API,2.5,May,Low,2,0,2.5,2.1,1.9,Latin America and the Caribbean,South America,South America
+1,Americas,Drought/Wildfire,Argentina,ARG,DR,Drought,INFORM risk-score API,2.2,May,Low,1,0,2.2,2.0,1.6,Latin America and the Caribbean,South America,South America
+1,Americas,Drought/Wildfire,Jamaica,JAM,DR,Drought,INFORM risk-score API,2.1,May,Low,1,0,2.1,1.8,1.4,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Colombia,COL,DR,Drought,INFORM risk-score API,1.9,May,Very Low,3,0,1.9,1.8,1.5,Latin America and the Caribbean,South America,South America
+1,Americas,Drought/Wildfire,Panama,PAN,DR,Drought,INFORM risk-score API,1.3,May,Very Low,3,0,1.3,1.2,1.0,Latin America and the Caribbean,Central America,Central America
+1,Americas,Drought/Wildfire,Venezuela,VEN,DR,Drought,INFORM risk-score API,1.3,May,Very Low,3,0,1.3,1.1,1.0,Latin America and the Caribbean,South America,South America
+1,Americas,Drought/Wildfire,Belize,BLZ,DR,Drought,INFORM risk-score API,1.0,June,Very Low,3,0,0.5,1.0,0.1,Latin America and the Caribbean,Central America,Central America
+1,Americas,Drought/Wildfire,Costa Rica,CRI,DR,Drought,INFORM risk-score API,1.0,May,Very Low,3,0,1.0,1.0,1.0,Latin America and the Caribbean,Central America,Central America
+1,Americas,Drought/Wildfire,Dominican Republic,DOM,DR,Drought,INFORM risk-score API,0.7,May,Very Low,3,0,0.7,0.5,0.5,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Barbados,BRB,DR,Drought,INFORM risk-score API,0.5,May,Very Low,3,0,0.5,0.5,0.5,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Grenada,GRD,DR,Drought,INFORM risk-score API,0.5,May,Very Low,3,0,0.5,0.5,0.5,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Saint Lucia,LCA,DR,Drought,INFORM risk-score API,0.5,May,Very Low,3,0,0.5,0.5,0.5,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Saint Vincent and the Grenadines,VCT,DR,Drought,INFORM risk-score API,0.5,May,Very Low,3,0,0.5,0.5,0.5,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Chile,CHL,DR,Drought,INFORM risk-score API,0.3,May,Very Low,3,0,0.3,0.3,0.3,Latin America and the Caribbean,South America,South America
+1,Americas,Drought/Wildfire,Trinidad and Tobago,TTO,DR,Drought,INFORM risk-score API,0.3,May,Very Low,3,0,0.3,0.3,0.3,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Antigua and Barbuda,ATG,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Bahamas,BHS,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Dominica,DMA,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Saint Kitts and Nevis,KNA,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Suriname,SUR,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Suriname,SUR,FL,Flood,INFORM risk-score API,8.6,May,Very High,2,2,8.6,8.6,0.0,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,United States,USA,FL,Flood,INFORM risk-score API,6.4,May,High,1,1,6.4,3.5,3.8,Northern America,,Northern America
+1,Americas,Floods/TC,Chile,CHL,FL,Flood,INFORM risk-score API,5.6,June,High,1,1,4.0,5.6,2.4,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Colombia,COL,FL,Flood,INFORM risk-score API,4.8,May,Medium,1,0,4.8,3.4,2.7,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Dominican Republic,DOM,FL,Flood,INFORM risk-score API,4.6,May,Medium,1,0,4.6,3.1,1.5,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Venezuela,VEN,FL,Flood,INFORM risk-score API,4.5,June,Medium,1,0,1.1,4.5,2.2,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Brazil,BRA,FL,Flood,INFORM risk-score API,4.3,June,Medium,1,0,3.2,4.3,2.2,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Haiti,HTI,FL,Flood,INFORM risk-score API,4.3,May,Medium,1,0,4.3,2.6,1.3,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Canada,CAN,FL,Flood,INFORM risk-score API,4.0,May,Medium,1,0,4.0,3.5,1.2,Northern America,,Northern America
+1,Americas,Floods/TC,Uruguay,URY,FL,Flood,INFORM risk-score API,3.9,May,Medium,1,0,3.9,1.6,0.0,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Cuba,CUB,FL,Flood,INFORM risk-score API,3.6,June,Medium,1,0,1.8,3.6,0.0,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Paraguay,PRY,FL,Flood,INFORM risk-score API,3.6,July,Medium,1,0,1.2,1.2,3.6,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Jamaica,JAM,FL,Flood,INFORM risk-score API,3.1,May,Low,2,0,3.1,3.1,0.0,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Nicaragua,NIC,FL,Flood,INFORM risk-score API,2.9,May,Low,2,0,2.9,2.9,1.5,Latin America and the Caribbean,Central America,Central America
+1,Americas,Floods/TC,Honduras,HND,FL,Flood,INFORM risk-score API,2.6,June,Low,1,0,0.6,2.6,0.6,Latin America and the Caribbean,Central America,Central America
+1,Americas,Floods/TC,Ecuador,ECU,FL,Flood,INFORM risk-score API,2.5,May,Low,1,0,2.5,0.8,0.0,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Argentina,ARG,FL,Flood,INFORM risk-score API,2.4,May,Low,1,0,2.4,1.6,1.6,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Guyana,GUY,FL,Flood,INFORM risk-score API,2.4,May,Low,2,0,2.4,0.0,2.4,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Guatemala,GTM,FL,Flood,INFORM risk-score API,1.9,June,Very Low,3,0,0.6,1.9,1.3,Latin America and the Caribbean,Central America,Central America
+1,Americas,Floods/TC,Mexico,MEX,FL,Flood,INFORM risk-score API,1.9,June,Very Low,3,0,1.4,1.9,1.9,Latin America and the Caribbean,Central America,Central America
+1,Americas,Floods/TC,Peru,PER,FL,Flood,INFORM risk-score API,1.5,May,Very Low,3,0,1.5,0.0,0.0,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Costa Rica,CRI,FL,Flood,INFORM risk-score API,1.3,May,Very Low,3,0,1.3,0.7,1.3,Latin America and the Caribbean,Central America,Central America
+1,Americas,Floods/TC,El Salvador,SLV,FL,Flood,INFORM risk-score API,1.2,June,Very Low,3,0,0.6,1.2,0.6,Latin America and the Caribbean,Central America,Central America
+1,Americas,Floods/TC,Panama,PAN,FL,Flood,INFORM risk-score API,1.1,May,Very Low,3,0,1.1,0.4,0.8,Latin America and the Caribbean,Central America,Central America
+1,Americas,Floods/TC,Bolivia,BOL,FL,Flood,INFORM risk-score API,0.4,May,Very Low,3,0,0.4,0.0,0.0,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Antigua and Barbuda,ATG,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Bahamas,BHS,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Barbados,BRB,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Dominica,DMA,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Grenada,GRD,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Saint Kitts and Nevis,KNA,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Saint Lucia,LCA,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Saint Vincent and the Grenadines,VCT,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Belize,BLZ,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Latin America and the Caribbean,Central America,Central America
+1,Americas,Floods/TC,Trinidad and Tobago,TTO,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,United States,USA,TC,Tropical Cyclone,INFORM risk-score API,2.6,July,Low,1,0,0.5,0.8,2.6,Northern America,,Northern America
+1,Americas,Floods/TC,Mexico,MEX,TC,Tropical Cyclone,INFORM risk-score API,2.3,July,Low,1,0,0.2,0.6,2.3,Latin America and the Caribbean,Central America,Central America
+1,Americas,Floods/TC,El Salvador,SLV,TC,Tropical Cyclone,INFORM risk-score API,2.2,July,Low,1,0,0.3,1.2,2.2,Latin America and the Caribbean,Central America,Central America
+1,Americas,Floods/TC,Bahamas,BHS,TC,Tropical Cyclone,INFORM risk-score API,1.8,July,Very Low,3,0,0.0,0.1,1.8,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Antigua and Barbuda,ATG,TC,Tropical Cyclone,INFORM risk-score API,1.6,July,Very Low,3,0,0.0,0.1,1.6,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Cuba,CUB,TC,Tropical Cyclone,INFORM risk-score API,1.5,July,Very Low,3,0,0.0,0.1,1.5,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Jamaica,JAM,TC,Tropical Cyclone,INFORM risk-score API,1.5,July,Very Low,3,0,0.0,0.1,1.5,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Belize,BLZ,TC,Tropical Cyclone,INFORM risk-score API,1.4,July,Very Low,3,0,0.0,0.1,1.4,Latin America and the Caribbean,Central America,Central America
+1,Americas,Floods/TC,Dominica,DMA,TC,Tropical Cyclone,INFORM risk-score API,1.4,July,Very Low,3,0,0.0,0.1,1.4,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Dominican Republic,DOM,TC,Tropical Cyclone,INFORM risk-score API,1.4,July,Very Low,3,0,0.0,0.1,1.4,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Haiti,HTI,TC,Tropical Cyclone,INFORM risk-score API,1.4,July,Very Low,3,0,0.0,0.1,1.4,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Guatemala,GTM,TC,Tropical Cyclone,INFORM risk-score API,1.3,July,Very Low,3,0,0.1,0.4,1.3,Latin America and the Caribbean,Central America,Central America
+1,Americas,Floods/TC,Honduras,HND,TC,Tropical Cyclone,INFORM risk-score API,1.3,July,Very Low,3,0,0.1,0.4,1.3,Latin America and the Caribbean,Central America,Central America
+1,Americas,Floods/TC,Nicaragua,NIC,TC,Tropical Cyclone,INFORM risk-score API,1.2,July,Very Low,3,0,0.1,0.4,1.2,Latin America and the Caribbean,Central America,Central America
+1,Americas,Floods/TC,Saint Kitts and Nevis,KNA,TC,Tropical Cyclone,INFORM risk-score API,1.2,July,Very Low,3,0,0.0,0.1,1.2,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Saint Lucia,LCA,TC,Tropical Cyclone,INFORM risk-score API,1.0,July,Very Low,3,0,0.0,0.1,1.0,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Barbados,BRB,TC,Tropical Cyclone,INFORM risk-score API,0.9,July,Very Low,3,0,0.0,0.1,0.9,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Saint Vincent and the Grenadines,VCT,TC,Tropical Cyclone,INFORM risk-score API,0.9,July,Very Low,3,0,0.0,0.1,0.9,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Colombia,COL,TC,Tropical Cyclone,INFORM risk-score API,0.8,July,Very Low,3,0,0.0,0.0,0.8,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Canada,CAN,TC,Tropical Cyclone,INFORM risk-score API,0.7,July,Very Low,3,0,0.1,0.2,0.7,Northern America,,Northern America
+1,Americas,Floods/TC,Trinidad and Tobago,TTO,TC,Tropical Cyclone,INFORM risk-score API,0.5,July,Very Low,3,0,0.0,0.0,0.5,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Costa Rica,CRI,TC,Tropical Cyclone,INFORM risk-score API,0.4,July,Very Low,3,0,0.0,0.0,0.4,Latin America and the Caribbean,Central America,Central America
+1,Americas,Floods/TC,Grenada,GRD,TC,Tropical Cyclone,INFORM risk-score API,0.3,July,Very Low,3,0,0.0,0.0,0.3,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Floods/TC,Argentina,ARG,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Bolivia,BOL,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Brazil,BRA,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Chile,CHL,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Ecuador,ECU,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Guyana,GUY,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Panama,PAN,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Latin America and the Caribbean,Central America,Central America
+1,Americas,Floods/TC,Paraguay,PRY,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Peru,PER,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Suriname,SUR,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Uruguay,URY,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Latin America and the Caribbean,South America,South America
+1,Americas,Floods/TC,Venezuela,VEN,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Latin America and the Caribbean,South America,South America
+1,Americas,Drought/Wildfire,Mexico,MEX,WF,Wildfire,GWIS seasonal API,23.02,May,Very High,1,2,23.01855739130435,15.809559130434781,8.007540869565217,Latin America and the Caribbean,Central America,Central America
+1,Americas,Drought/Wildfire,United States,USA,WF,Wildfire,GWIS seasonal API,9.57,July,High,2,2,6.896156086956521,9.53134347826087,9.57194347826087,Northern America,,Northern America
+1,Americas,Drought/Wildfire,Bolivia,BOL,WF,Wildfire,GWIS seasonal API,8.34,July,Medium,2,0,3.4070913043478264,5.28695652173913,8.340616086956521,Latin America and the Caribbean,South America,South America
+1,Americas,Drought/Wildfire,Brazil,BRA,WF,Wildfire,GWIS seasonal API,8.3,July,Medium,1,0,2.064315217391304,4.523588260869565,8.302999999999999,Latin America and the Caribbean,South America,South America
+1,Americas,Drought/Wildfire,Saint Lucia,LCA,WF,Wildfire,GWIS seasonal API,5.32,May,Medium,1,0,5.315475217391304,3.0707604347826085,1.2007473913043476,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Paraguay,PRY,WF,Wildfire,GWIS seasonal API,4.53,July,Low,3,0,2.1592891304347828,2.1320452173913043,4.529448260869565,Latin America and the Caribbean,South America,South America
+1,Americas,Drought/Wildfire,Chile,CHL,WF,Wildfire,GWIS seasonal API,3.85,May,Low,3,0,3.853568695652174,3.2919091304347825,3.332437391304348,Latin America and the Caribbean,South America,South America
+1,Americas,Drought/Wildfire,Dominican Republic,DOM,WF,Wildfire,GWIS seasonal API,3.68,July,Low,3,0,2.301994347826087,2.7330852173913045,3.6763891304347824,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Cuba,CUB,WF,Wildfire,GWIS seasonal API,3.65,May,Low,1,0,3.6535786956521736,1.0792147826086955,1.5609004347826088,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Jamaica,JAM,WF,Wildfire,GWIS seasonal API,3.48,July,Low,3,0,2.200661739130435,2.6169669565217393,3.4780460869565215,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Dominica,DMA,WF,Wildfire,GWIS seasonal API,3.36,May,Low,2,0,3.358208695652174,2.760867826086957,1.3195491304347826,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Guatemala,GTM,WF,Wildfire,GWIS seasonal API,3.3,May,Low,1,0,3.2972265217391303,0.34245652173913044,0.5570447826086956,Latin America and the Caribbean,Central America,Central America
+1,Americas,Drought/Wildfire,Barbados,BRB,WF,Wildfire,GWIS seasonal API,3.1,May,Low,1,0,3.104631739130435,1.4865165217391303,0.31238391304347823,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Saint Vincent and the Grenadines,VCT,WF,Wildfire,GWIS seasonal API,3.08,May,Low,1,0,3.083368260869565,1.283914347826087,0.2751908695652174,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Belize,BLZ,WF,Wildfire,GWIS seasonal API,2.95,May,Low,1,0,2.9530986956521743,0.26834608695652173,0.2289704347826087,Latin America and the Caribbean,Central America,Central America
+1,Americas,Drought/Wildfire,Grenada,GRD,WF,Wildfire,GWIS seasonal API,2.84,May,Low,1,0,2.836136956521739,0.7792478260869565,0.12636739130434782,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Nicaragua,NIC,WF,Wildfire,GWIS seasonal API,2.55,May,Low,1,0,2.552680434782609,0.27518,1.0432682608695654,Latin America and the Caribbean,Central America,Central America
+1,Americas,Drought/Wildfire,Peru,PER,WF,Wildfire,GWIS seasonal API,2.3,July,Low,1,0,0.80802,1.48497,2.30084,Latin America and the Caribbean,South America,South America
+1,Americas,Drought/Wildfire,El Salvador,SLV,WF,Wildfire,GWIS seasonal API,2.07,May,Low,1,0,2.0698334782608696,0.3209860869565217,1.7236039130434784,Latin America and the Caribbean,Central America,Central America
+1,Americas,Drought/Wildfire,Antigua and Barbuda,ATG,WF,Wildfire,GWIS seasonal API,1.86,June,Very Low,3,0,1.67642,1.8610391304347826,1.2270039130434784,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Bahamas,BHS,WF,Wildfire,GWIS seasonal API,1.85,May,Very Low,3,0,1.8548686956521738,0.8158760869565218,1.026445652173913,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Venezuela,VEN,WF,Wildfire,GWIS seasonal API,1.8,May,Very Low,3,0,1.7954778260869564,0.9403130434782608,1.0297573913043478,Latin America and the Caribbean,South America,South America
+1,Americas,Drought/Wildfire,Saint Kitts and Nevis,KNA,WF,Wildfire,GWIS seasonal API,1.59,June,Very Low,3,0,1.551714347826087,1.5863682608695655,1.1455969565217392,Latin America and the Caribbean,Caribbean,Caribbean
+1,Americas,Drought/Wildfire,Canada,CAN,WF,Wildfire,GWIS seasonal API,1.37,July,Very Low,3,0,0.6928986956521739,1.0764947826086957,1.3674239130434782,Northern America,,Northern America
+1,Americas,Drought/Wildfire,Costa Rica,CRI,WF,Wildfire,GWIS seasonal API,0.91,May,Very Low,3,0,0.9110273913043478,0.06704565217391303,0.19762217391304346,Latin America and the Caribbean,Central America,Central America
+1,Americas,Drought/Wildfire,Uruguay,URY,WF,Wildfire,GWIS seasonal API,0.78,May,Very Low,3,0,0.7811317391304348,0.35499,0.2657204347826087,Latin America and the Caribbean,South America,South America
+1,Americas,Drought/Wildfire,Ecuador,ECU,WF,Wildfire,GWIS seasonal API,0.75,July,Very Low,3,0,0.17231391304347826,0.37335304347826087,0.7456460869565218,Latin America and the Caribbean,South America,South America
+1,Americas,Drought/Wildfire,Colombia,COL,WF,Wildfire,GWIS seasonal API,0.7,July,Very Low,3,0,0.2510808695652174,0.39301434782608696,0.70282,Latin America and the Caribbean,South America,South America
+1,Americas,Drought/Wildfire,Guyana,GUY,WF,Wildfire,GWIS seasonal API,0.17,May,Very Low,3,0,0.17463739130434783,0.02522565217391304,0.01071608695652174,Latin America and the Caribbean,South America,South America
+1,Americas,Drought/Wildfire,Suriname,SUR,WF,Wildfire,GWIS seasonal API,0.09,May,Very Low,3,0,0.0860608695652174,0.03168130434782609,0.052684347826086955,Latin America and the Caribbean,South America,South America
+2,Asia-Pacific,Drought/Wildfire,Afghanistan,AFG,DR,Drought,INFORM risk-score API,7.2,May,Very High,1,3,7.2,6.2,5.8,Southern Asia,,Southern Asia
+2,Asia-Pacific,Drought/Wildfire,Australia,AUS,DR,Drought,INFORM risk-score API,6.3,July,High,3,3,5.7,5.4,6.3,Australia and New Zealand,,Australia and New Zealand
+2,Asia-Pacific,Drought/Wildfire,India,IND,DR,Drought,INFORM risk-score API,6.2,July,High,2,2,4.8,5.7,6.2,Southern Asia,,Southern Asia
+2,Asia-Pacific,Drought/Wildfire,Thailand,THA,DR,Drought,INFORM risk-score API,5.7,May,High,3,3,5.7,5.7,5.6,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Pakistan,PAK,DR,Drought,INFORM risk-score API,5.5,July,High,1,1,3.7,3.8,5.5,Southern Asia,,Southern Asia
+2,Asia-Pacific,Drought/Wildfire,"Micronesia, Federated States of",FSM,DR,Drought,INFORM risk-score API,5.4,May,High,3,3,5.4,5.4,5.4,Micronesia,,Micronesia
+2,Asia-Pacific,Drought/Wildfire,Mongolia,MNG,DR,Drought,INFORM risk-score API,5.4,July,High,1,1,3.1,3.8,5.4,Eastern Asia,,Eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Cambodia,KHM,DR,Drought,INFORM risk-score API,4.6,May,Medium,3,0,4.6,4.5,4.2,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Drought/Wildfire,China,CHN,DR,Drought,INFORM risk-score API,4.6,May,Medium,3,0,4.6,4.6,4.6,Eastern Asia,,Eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Bangladesh,BGD,DR,Drought,INFORM risk-score API,4.4,June,Medium,2,0,3.5,4.4,4.2,Southern Asia,,Southern Asia
+2,Asia-Pacific,Drought/Wildfire,Philippines,PHL,DR,Drought,INFORM risk-score API,4.1,May,Medium,3,0,4.1,3.9,3.8,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Kiribati,KIR,DR,Drought,INFORM risk-score API,3.8,May,Medium,3,0,3.8,3.8,3.8,Micronesia,,Micronesia
+2,Asia-Pacific,Drought/Wildfire,Sri Lanka,LKA,DR,Drought,INFORM risk-score API,3.5,May,Low,3,0,3.5,3.5,3.5,Southern Asia,,Southern Asia
+2,Asia-Pacific,Drought/Wildfire,Marshall Islands,MHL,DR,Drought,INFORM risk-score API,3.4,May,Low,3,0,3.4,3.4,3.4,Micronesia,,Micronesia
+2,Asia-Pacific,Drought/Wildfire,Viet Nam,VNM,DR,Drought,INFORM risk-score API,3.4,May,Low,3,0,3.4,3.4,3.4,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Democratic People's Republic of Korea,PRK,DR,Drought,INFORM risk-score API,3.3,May,Low,3,0,3.3,3.3,3.3,Eastern Asia,,Eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Indonesia,IDN,DR,Drought,INFORM risk-score API,3.0,May,Low,3,0,3.0,2.9,2.9,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Nepal,NPL,DR,Drought,INFORM risk-score API,2.8,June,Low,3,0,2.5,2.8,2.7,Southern Asia,,Southern Asia
+2,Asia-Pacific,Drought/Wildfire,Malaysia,MYS,DR,Drought,INFORM risk-score API,2.6,May,Low,3,0,2.6,2.6,2.4,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Papua New Guinea,PNG,DR,Drought,INFORM risk-score API,2.5,May,Low,3,0,2.5,2.5,2.5,Melanesia,,Melanesia
+2,Asia-Pacific,Drought/Wildfire,Lao People's Democratic Republic,LAO,DR,Drought,INFORM risk-score API,2.4,May,Low,3,0,2.4,2.4,2.4,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Fiji,FJI,DR,Drought,INFORM risk-score API,2.0,May,Very Low,3,0,2.0,2.0,2.0,Melanesia,,Melanesia
+2,Asia-Pacific,Drought/Wildfire,Timor-Leste,TLS,DR,Drought,INFORM risk-score API,1.5,May,Very Low,3,0,1.5,1.5,1.5,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Drought/Wildfire,New Zealand,NZL,DR,Drought,INFORM risk-score API,1.1,May,Very Low,3,0,1.1,0.9,0.8,Australia and New Zealand,,Australia and New Zealand
+2,Asia-Pacific,Drought/Wildfire,Myanmar,MMR,DR,Drought,INFORM risk-score API,1.0,May,Very Low,3,0,1.0,1.0,0.8,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Solomon Islands,SLB,DR,Drought,INFORM risk-score API,0.8,May,Very Low,3,0,0.8,0.8,0.8,Melanesia,,Melanesia
+2,Asia-Pacific,Drought/Wildfire,Samoa,WSM,DR,Drought,INFORM risk-score API,0.5,May,Very Low,3,0,0.5,0.5,0.5,Polynesia,,Polynesia
+2,Asia-Pacific,Drought/Wildfire,Tonga,TON,DR,Drought,INFORM risk-score API,0.5,May,Very Low,3,0,0.5,0.5,0.5,Polynesia,,Polynesia
+2,Asia-Pacific,Drought/Wildfire,Tuvalu,TUV,DR,Drought,INFORM risk-score API,0.5,May,Very Low,3,0,0.5,0.5,0.5,Polynesia,,Polynesia
+2,Asia-Pacific,Drought/Wildfire,Japan,JPN,DR,Drought,INFORM risk-score API,0.3,May,Very Low,3,0,0.3,0.1,0.0,Eastern Asia,,Eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Republic of Korea,KOR,DR,Drought,INFORM risk-score API,0.3,May,Very Low,3,0,0.3,0.3,0.3,Eastern Asia,,Eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Bhutan,BTN,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Asia,,Southern Asia
+2,Asia-Pacific,Drought/Wildfire,Brunei Darussalam,BRN,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Maldives,MDV,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Asia,,Southern Asia
+2,Asia-Pacific,Drought/Wildfire,Palau,PLW,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Micronesia,,Micronesia
+2,Asia-Pacific,Drought/Wildfire,Singapore,SGP,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Vanuatu,VUT,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Melanesia,,Melanesia
+2,Asia-Pacific,Floods/TC,Bangladesh,BGD,FL,Flood,INFORM risk-score API,10.0,July,Very High,2,2,2.5,9.2,10.0,Southern Asia,,Southern Asia
+2,Asia-Pacific,Floods/TC,China,CHN,FL,Flood,INFORM risk-score API,8.4,June,Very High,2,2,4.7,8.4,6.7,Eastern Asia,,Eastern Asia
+2,Asia-Pacific,Floods/TC,India,IND,FL,Flood,INFORM risk-score API,8.4,July,Very High,1,1,1.3,4.6,8.4,Southern Asia,,Southern Asia
+2,Asia-Pacific,Floods/TC,Myanmar,MMR,FL,Flood,INFORM risk-score API,7.7,July,Very High,1,2,1.1,5.5,7.7,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Floods/TC,Democratic People's Republic of Korea,PRK,FL,Flood,INFORM risk-score API,7.4,July,Very High,1,1,0.0,1.6,7.4,Eastern Asia,,Eastern Asia
+2,Asia-Pacific,Floods/TC,Afghanistan,AFG,FL,Flood,INFORM risk-score API,7.2,May,Very High,1,1,7.2,2.7,4.9,Southern Asia,,Southern Asia
+2,Asia-Pacific,Floods/TC,Nepal,NPL,FL,Flood,INFORM risk-score API,6.7,July,Very High,1,1,0.8,2.0,6.7,Southern Asia,,Southern Asia
+2,Asia-Pacific,Floods/TC,Pakistan,PAK,FL,Flood,INFORM risk-score API,6.2,July,High,1,1,0.7,2.9,6.2,Southern Asia,,Southern Asia
+2,Asia-Pacific,Floods/TC,Viet Nam,VNM,FL,Flood,INFORM risk-score API,5.6,July,High,1,1,1.1,1.7,5.6,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Floods/TC,Sri Lanka,LKA,FL,Flood,INFORM risk-score API,4.9,May,Medium,1,0,4.9,1.8,0.0,Southern Asia,,Southern Asia
+2,Asia-Pacific,Floods/TC,Cambodia,KHM,FL,Flood,INFORM risk-score API,4.8,July,Medium,1,0,0.0,0.0,4.8,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Floods/TC,Republic of Korea,KOR,FL,Flood,INFORM risk-score API,4.7,July,Medium,1,0,0.8,0.0,4.7,Eastern Asia,,Eastern Asia
+2,Asia-Pacific,Floods/TC,Mongolia,MNG,FL,Flood,INFORM risk-score API,4.3,July,Medium,1,0,0.0,0.0,4.3,Eastern Asia,,Eastern Asia
+2,Asia-Pacific,Floods/TC,Philippines,PHL,FL,Flood,INFORM risk-score API,4.2,June,Medium,2,0,2.7,4.2,3.8,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Floods/TC,Japan,JPN,FL,Flood,INFORM risk-score API,3.9,July,Medium,1,0,0.0,1.6,3.9,Eastern Asia,,Eastern Asia
+2,Asia-Pacific,Floods/TC,New Zealand,NZL,FL,Flood,INFORM risk-score API,3.8,May,Medium,2,0,3.8,3.8,1.9,Australia and New Zealand,,Australia and New Zealand
+2,Asia-Pacific,Floods/TC,Indonesia,IDN,FL,Flood,INFORM risk-score API,2.9,July,Low,1,0,1.4,1.7,2.9,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Floods/TC,Thailand,THA,FL,Flood,INFORM risk-score API,2.9,May,Low,3,0,2.9,2.2,2.2,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Floods/TC,Bhutan,BTN,FL,Flood,INFORM risk-score API,2.6,July,Low,1,0,0.0,0.0,2.6,Southern Asia,,Southern Asia
+2,Asia-Pacific,Floods/TC,Papua New Guinea,PNG,FL,Flood,INFORM risk-score API,2.5,June,Low,2,0,0.0,2.5,2.5,Melanesia,,Melanesia
+2,Asia-Pacific,Floods/TC,Lao People's Democratic Republic,LAO,FL,Flood,INFORM risk-score API,2.0,June,Very Low,3,0,0.0,2.0,1.0,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Floods/TC,Timor-Leste,TLS,FL,Flood,INFORM risk-score API,1.7,June,Very Low,3,0,0.0,1.7,0.6,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Floods/TC,Malaysia,MYS,FL,Flood,INFORM risk-score API,0.9,July,Very Low,3,0,0.0,0.0,0.9,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Floods/TC,Fiji,FJI,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Melanesia,,Melanesia
+2,Asia-Pacific,Floods/TC,Kiribati,KIR,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Micronesia,,Micronesia
+2,Asia-Pacific,Floods/TC,Maldives,MDV,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Southern Asia,,Southern Asia
+2,Asia-Pacific,Floods/TC,Marshall Islands,MHL,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Micronesia,,Micronesia
+2,Asia-Pacific,Floods/TC,"Micronesia, Federated States of",FSM,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Micronesia,,Micronesia
+2,Asia-Pacific,Floods/TC,Palau,PLW,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Micronesia,,Micronesia
+2,Asia-Pacific,Floods/TC,Samoa,WSM,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Polynesia,,Polynesia
+2,Asia-Pacific,Floods/TC,Singapore,SGP,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Floods/TC,Solomon Islands,SLB,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Melanesia,,Melanesia
+2,Asia-Pacific,Floods/TC,Tonga,TON,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Polynesia,,Polynesia
+2,Asia-Pacific,Floods/TC,Tuvalu,TUV,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Polynesia,,Polynesia
+2,Asia-Pacific,Floods/TC,Vanuatu,VUT,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Melanesia,,Melanesia
+2,Asia-Pacific,Floods/TC,Australia,AUS,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Australia and New Zealand,,Australia and New Zealand
+2,Asia-Pacific,Floods/TC,Brunei Darussalam,BRN,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Floods/TC,Japan,JPN,TC,Tropical Cyclone,INFORM risk-score API,6.2,July,High,1,1,2.2,2.4,6.2,Eastern Asia,,Eastern Asia
+2,Asia-Pacific,Floods/TC,Philippines,PHL,TC,Tropical Cyclone,INFORM risk-score API,5.8,July,High,1,1,2.1,2.2,5.8,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Floods/TC,India,IND,TC,Tropical Cyclone,INFORM risk-score API,5.1,June,High,1,1,0.8,5.1,0.0,Southern Asia,,Southern Asia
+2,Asia-Pacific,Floods/TC,Bangladesh,BGD,TC,Tropical Cyclone,INFORM risk-score API,5.0,June,Medium,1,0,0.9,5.0,0.0,Southern Asia,,Southern Asia
+2,Asia-Pacific,Floods/TC,Republic of Korea,KOR,TC,Tropical Cyclone,INFORM risk-score API,4.6,July,Medium,1,0,1.6,1.8,4.6,Eastern Asia,,Eastern Asia
+2,Asia-Pacific,Floods/TC,Viet Nam,VNM,TC,Tropical Cyclone,INFORM risk-score API,4.5,July,Medium,1,0,1.5,1.6,4.5,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Floods/TC,China,CHN,TC,Tropical Cyclone,INFORM risk-score API,4.2,July,Medium,1,0,1.6,2.2,4.2,Eastern Asia,,Eastern Asia
+2,Asia-Pacific,Floods/TC,Democratic People's Republic of Korea,PRK,TC,Tropical Cyclone,INFORM risk-score API,3.7,July,Medium,1,0,1.3,1.4,3.7,Eastern Asia,,Eastern Asia
+2,Asia-Pacific,Floods/TC,Myanmar,MMR,TC,Tropical Cyclone,INFORM risk-score API,3.2,July,Low,1,0,1.2,1.6,3.2,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Floods/TC,Indonesia,IDN,TC,Tropical Cyclone,INFORM risk-score API,3.1,July,Low,1,0,1.4,1.2,3.1,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Floods/TC,Thailand,THA,TC,Tropical Cyclone,INFORM risk-score API,2.7,July,Low,1,0,0.9,1.4,2.7,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Floods/TC,Pakistan,PAK,TC,Tropical Cyclone,INFORM risk-score API,2.6,June,Low,1,0,0.6,2.6,0.0,Southern Asia,,Southern Asia
+2,Asia-Pacific,Floods/TC,Palau,PLW,TC,Tropical Cyclone,INFORM risk-score API,2.6,July,Low,1,0,0.9,1.0,2.6,Micronesia,,Micronesia
+2,Asia-Pacific,Floods/TC,Sri Lanka,LKA,TC,Tropical Cyclone,INFORM risk-score API,2.4,June,Low,1,0,0.6,2.4,0.0,Southern Asia,,Southern Asia
+2,Asia-Pacific,Floods/TC,Cambodia,KHM,TC,Tropical Cyclone,INFORM risk-score API,2.3,July,Low,1,0,0.8,0.8,2.3,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Floods/TC,Lao People's Democratic Republic,LAO,TC,Tropical Cyclone,INFORM risk-score API,1.7,July,Very Low,3,0,0.6,0.7,1.7,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Floods/TC,Malaysia,MYS,TC,Tropical Cyclone,INFORM risk-score API,1.7,July,Very Low,3,0,0.5,0.5,1.7,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Floods/TC,Australia,AUS,TC,Tropical Cyclone,INFORM risk-score API,0.4,May,Very Low,3,0,0.4,0.1,0.0,Australia and New Zealand,,Australia and New Zealand
+2,Asia-Pacific,Floods/TC,Solomon Islands,SLB,TC,Tropical Cyclone,INFORM risk-score API,0.4,May,Very Low,3,0,0.4,0.1,0.0,Melanesia,,Melanesia
+2,Asia-Pacific,Floods/TC,Timor-Leste,TLS,TC,Tropical Cyclone,INFORM risk-score API,0.4,May,Very Low,3,0,0.4,0.1,0.0,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Floods/TC,Tonga,TON,TC,Tropical Cyclone,INFORM risk-score API,0.4,May,Very Low,3,0,0.4,0.1,0.0,Polynesia,,Polynesia
+2,Asia-Pacific,Floods/TC,Vanuatu,VUT,TC,Tropical Cyclone,INFORM risk-score API,0.4,May,Very Low,3,0,0.4,0.1,0.0,Melanesia,,Melanesia
+2,Asia-Pacific,Floods/TC,Fiji,FJI,TC,Tropical Cyclone,INFORM risk-score API,0.3,May,Very Low,3,0,0.3,0.1,0.0,Melanesia,,Melanesia
+2,Asia-Pacific,Floods/TC,New Zealand,NZL,TC,Tropical Cyclone,INFORM risk-score API,0.3,May,Very Low,3,0,0.3,0.1,0.0,Australia and New Zealand,,Australia and New Zealand
+2,Asia-Pacific,Floods/TC,Papua New Guinea,PNG,TC,Tropical Cyclone,INFORM risk-score API,0.3,May,Very Low,3,0,0.3,0.1,0.0,Melanesia,,Melanesia
+2,Asia-Pacific,Floods/TC,Samoa,WSM,TC,Tropical Cyclone,INFORM risk-score API,0.3,May,Very Low,3,0,0.3,0.1,0.0,Polynesia,,Polynesia
+2,Asia-Pacific,Floods/TC,Marshall Islands,MHL,TC,Tropical Cyclone,INFORM risk-score API,0.2,June,Very Low,3,0,0.1,0.2,0.2,Micronesia,,Micronesia
+2,Asia-Pacific,Floods/TC,Afghanistan,AFG,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Asia,,Southern Asia
+2,Asia-Pacific,Floods/TC,Bhutan,BTN,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Asia,,Southern Asia
+2,Asia-Pacific,Floods/TC,Brunei Darussalam,BRN,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Floods/TC,Kiribati,KIR,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Micronesia,,Micronesia
+2,Asia-Pacific,Floods/TC,Maldives,MDV,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Asia,,Southern Asia
+2,Asia-Pacific,Floods/TC,"Micronesia, Federated States of",FSM,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Micronesia,,Micronesia
+2,Asia-Pacific,Floods/TC,Mongolia,MNG,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Eastern Asia,,Eastern Asia
+2,Asia-Pacific,Floods/TC,Nepal,NPL,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Asia,,Southern Asia
+2,Asia-Pacific,Floods/TC,Singapore,SGP,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Floods/TC,Tuvalu,TUV,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Polynesia,,Polynesia
+2,Asia-Pacific,Drought/Wildfire,Afghanistan,AFG,WF,Wildfire,GWIS seasonal API,40.75,July,Very High,2,3,16.055124347826087,32.476058260869564,40.75346913043478,Southern Asia,,Southern Asia
+2,Asia-Pacific,Drought/Wildfire,Tuvalu,TUV,WF,Wildfire,GWIS seasonal API,38.48,May,Very High,3,3,38.47743391304348,38.47743391304348,38.47743391304348,Polynesia,,Polynesia
+2,Asia-Pacific,Drought/Wildfire,Pakistan,PAK,WF,Wildfire,GWIS seasonal API,34.89,May,Very High,2,3,34.88668260869566,29.22452347826087,13.841912608695653,Southern Asia,,Southern Asia
+2,Asia-Pacific,Drought/Wildfire,India,IND,WF,Wildfire,GWIS seasonal API,25.36,May,Very High,1,2,25.359575652173916,12.59563695652174,2.715678695652174,Southern Asia,,Southern Asia
+2,Asia-Pacific,Drought/Wildfire,Australia,AUS,WF,Wildfire,GWIS seasonal API,19.39,May,Very High,1,3,19.393524347826087,15.162150869565217,16.715905652173912,Australia and New Zealand,,Australia and New Zealand
+2,Asia-Pacific,Drought/Wildfire,Kiribati,KIR,WF,Wildfire,GWIS seasonal API,17.78,May,Very High,3,3,17.78428391304348,17.78428391304348,17.78428391304348,Micronesia,,Micronesia
+2,Asia-Pacific,Drought/Wildfire,Mongolia,MNG,WF,Wildfire,GWIS seasonal API,14.41,May,High,2,2,14.41361347826087,10.414021304347825,6.034474782608696,Eastern Asia,,Eastern Asia
+2,Asia-Pacific,Drought/Wildfire,China,CHN,WF,Wildfire,GWIS seasonal API,7.76,May,Medium,2,0,7.762098260869565,5.876207826086957,3.450895217391304,Eastern Asia,,Eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Sri Lanka,LKA,WF,Wildfire,GWIS seasonal API,6.58,July,Medium,2,0,2.7281752173913043,6.253360434782609,6.580142608695652,Southern Asia,,Southern Asia
+2,Asia-Pacific,Drought/Wildfire,Marshall Islands,MHL,WF,Wildfire,GWIS seasonal API,5.94,May,Medium,3,0,5.941717826086956,5.941717826086956,5.941717826086956,Micronesia,,Micronesia
+2,Asia-Pacific,Drought/Wildfire,Timor-Leste,TLS,WF,Wildfire,GWIS seasonal API,4.7,July,Low,2,0,1.494875652173913,2.9572226086956523,4.698594782608695,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Nepal,NPL,WF,Wildfire,GWIS seasonal API,3.88,May,Low,1,0,3.8770643478260864,1.7233847826086957,0.04559913043478261,Southern Asia,,Southern Asia
+2,Asia-Pacific,Drought/Wildfire,Myanmar,MMR,WF,Wildfire,GWIS seasonal API,3.28,May,Low,1,0,3.275843913043478,0.24670086956521736,0.10516130434782608,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Republic of Korea,KOR,WF,Wildfire,GWIS seasonal API,1.87,May,Very Low,3,0,1.8731739130434781,1.8501113043478261,0.3627139130434783,Eastern Asia,,Eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Fiji,FJI,WF,Wildfire,GWIS seasonal API,1.46,July,Very Low,3,0,0.5677013043478262,0.8743804347826086,1.4618660869565219,Melanesia,,Melanesia
+2,Asia-Pacific,Drought/Wildfire,Tonga,TON,WF,Wildfire,GWIS seasonal API,1.44,July,Very Low,3,0,0.7448386956521739,1.0961860869565219,1.439583043478261,Polynesia,,Polynesia
+2,Asia-Pacific,Drought/Wildfire,Cook Islands,COK,WF,Wildfire,GWIS seasonal API,1.42,July,Very Low,3,0,0.5983169565217391,1.1395665217391306,1.4164817391304347,Polynesia,,Polynesia
+2,Asia-Pacific,Drought/Wildfire,Thailand,THA,WF,Wildfire,GWIS seasonal API,1.31,May,Very Low,3,0,1.3085730434782608,0.4446947826086956,0.31251304347826087,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Democratic People's Republic of Korea,PRK,WF,Wildfire,GWIS seasonal API,1.3,May,Very Low,3,0,1.2993904347826086,0.9327482608695653,0.30288130434782606,Eastern Asia,,Eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Vanuatu,VUT,WF,Wildfire,GWIS seasonal API,1.24,July,Very Low,3,0,0.4534543478260869,0.8393621739130436,1.2389008695652175,Melanesia,,Melanesia
+2,Asia-Pacific,Drought/Wildfire,Bangladesh,BGD,WF,Wildfire,GWIS seasonal API,1.23,May,Very Low,3,0,1.2297252173913045,0.24270565217391304,0.04129304347826087,Southern Asia,,Southern Asia
+2,Asia-Pacific,Drought/Wildfire,Lao People's Democratic Republic,LAO,WF,Wildfire,GWIS seasonal API,0.99,May,Very Low,3,0,0.9934652173913043,0.18069695652173914,0.07263565217391305,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Indonesia,IDN,WF,Wildfire,GWIS seasonal API,0.71,July,Very Low,3,0,0.1619991304347826,0.3798865217391304,0.70751,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Cambodia,KHM,WF,Wildfire,GWIS seasonal API,0.68,May,Very Low,3,0,0.6822026086956522,0.45013565217391305,0.3218217391304348,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Viet Nam,VNM,WF,Wildfire,GWIS seasonal API,0.68,May,Very Low,3,0,0.6768865217391304,0.6233478260869565,0.5930160869565217,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Philippines,PHL,WF,Wildfire,GWIS seasonal API,0.67,May,Very Low,3,0,0.6657613043478261,0.10893086956521739,0.06900217391304349,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Japan,JPN,WF,Wildfire,GWIS seasonal API,0.45,May,Very Low,3,0,0.4467226086956522,0.3392195652173913,0.2759417391304348,Eastern Asia,,Eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Maldives,MDV,WF,Wildfire,GWIS seasonal API,0.38,May,Very Low,3,0,0.38296608695652173,0.1414313043478261,0.15468478260869567,Southern Asia,,Southern Asia
+2,Asia-Pacific,Drought/Wildfire,Samoa,WSM,WF,Wildfire,GWIS seasonal API,0.35,July,Very Low,3,0,0.09652304347826086,0.2235282608695652,0.3501804347826087,Polynesia,,Polynesia
+2,Asia-Pacific,Drought/Wildfire,Papua New Guinea,PNG,WF,Wildfire,GWIS seasonal API,0.22,July,Very Low,3,0,0.052990434782608696,0.10489043478260869,0.2187860869565217,Melanesia,,Melanesia
+2,Asia-Pacific,Drought/Wildfire,New Zealand,NZL,WF,Wildfire,GWIS seasonal API,0.17,May,Very Low,3,0,0.17406565217391307,0.0669708695652174,0.0471008695652174,Australia and New Zealand,,Australia and New Zealand
+2,Asia-Pacific,Drought/Wildfire,Brunei Darussalam,BRN,WF,Wildfire,GWIS seasonal API,0.07,June,Very Low,3,0,0.025730869565217394,0.06764869565217392,0.060659565217391305,South-eastern Asia,,South-eastern Asia
+2,Asia-Pacific,Drought/Wildfire,Solomon Islands,SLB,WF,Wildfire,GWIS seasonal API,0.06,July,Very Low,3,0,0.021565652173913045,0.036153478260869565,0.06246260869565217,Melanesia,,Melanesia
+2,Asia-Pacific,Drought/Wildfire,"Micronesia, Federated States of",FSM,WF,Wildfire,GWIS seasonal API,0.03,May,Very Low,3,0,0.031727391304347825,0.0078000000000000005,0.006513043478260869,Micronesia,,Micronesia
+2,Asia-Pacific,Drought/Wildfire,Palau,PLW,WF,Wildfire,GWIS seasonal API,0.03,July,Very Low,3,0,0.01205695652173913,0.00745391304347826,0.028793043478260866,Micronesia,,Micronesia
+2,Asia-Pacific,Drought/Wildfire,Bhutan,BTN,WF,Wildfire,GWIS seasonal API,0.01,May,Very Low,3,0,0.0072195652173913044,0.0007482608695652174,0.0006273913043478261,Southern Asia,,Southern Asia
+3,Europe,Drought/Wildfire,Tajikistan,TJK,DR,Drought,INFORM risk-score API,7.6,May,Very High,1,2,7.6,6.5,4.8,Central Asia,,Central Asia
+3,Europe,Drought/Wildfire,Uzbekistan,UZB,DR,Drought,INFORM risk-score API,6.4,May,High,2,2,6.4,5.3,4.4,Central Asia,,Central Asia
+3,Europe,Drought/Wildfire,Kyrgyzstan,KGZ,DR,Drought,INFORM risk-score API,6.2,May,High,3,3,6.2,6.1,5.7,Central Asia,,Central Asia
+3,Europe,Drought/Wildfire,"Moldova, Republic of",MDA,DR,Drought,INFORM risk-score API,5.4,July,High,1,1,4.2,4.6,5.4,Eastern Europe,,Eastern Europe
+3,Europe,Drought/Wildfire,Turkmenistan,TKM,DR,Drought,INFORM risk-score API,4.6,May,Medium,2,0,4.6,4.2,2.9,Central Asia,,Central Asia
+3,Europe,Drought/Wildfire,Georgia,GEO,DR,Drought,INFORM risk-score API,4.5,May,Medium,2,0,4.5,3.8,3.0,Western Asia,,Western Asia
+3,Europe,Drought/Wildfire,Azerbaijan,AZE,DR,Drought,INFORM risk-score API,4.4,May,Medium,1,0,4.4,3.4,1.0,Western Asia,,Western Asia
+3,Europe,Drought/Wildfire,Spain,ESP,DR,Drought,INFORM risk-score API,4.2,May,Medium,1,0,4.2,3.5,2.7,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,Albania,ALB,DR,Drought,INFORM risk-score API,4.1,May,Medium,3,0,4.1,4.1,4.1,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,Kazakhstan,KAZ,DR,Drought,INFORM risk-score API,4.1,May,Medium,3,0,4.1,3.7,3.7,Central Asia,,Central Asia
+3,Europe,Drought/Wildfire,Armenia,ARM,DR,Drought,INFORM risk-score API,3.8,May,Medium,2,0,3.8,3.8,3.1,Western Asia,,Western Asia
+3,Europe,Drought/Wildfire,Hungary,HUN,DR,Drought,INFORM risk-score API,3.3,May,Low,2,0,3.3,2.2,1.7,Eastern Europe,,Eastern Europe
+3,Europe,Drought/Wildfire,Lithuania,LTU,DR,Drought,INFORM risk-score API,3.1,May,Low,3,0,3.1,2.6,2.1,Northern Europe,,Northern Europe
+3,Europe,Drought/Wildfire,Belarus,BLR,DR,Drought,INFORM risk-score API,2.8,May,Low,2,0,2.8,2.1,1.0,Eastern Europe,,Eastern Europe
+3,Europe,Drought/Wildfire,Russian Federation,RUS,DR,Drought,INFORM risk-score API,2.7,May,Low,3,0,2.7,2.7,2.7,Eastern Europe,,Eastern Europe
+3,Europe,Drought/Wildfire,Ukraine,UKR,DR,Drought,INFORM risk-score API,2.4,May,Low,1,0,2.4,2.0,1.7,Eastern Europe,,Eastern Europe
+3,Europe,Drought/Wildfire,Türkiye,TUR,DR,Drought,INFORM risk-score API,2.3,May,Low,1,0,2.3,2.0,1.6,Western Asia,,Western Asia
+3,Europe,Drought/Wildfire,Romania,ROU,DR,Drought,INFORM risk-score API,2.2,May,Low,1,0,2.2,1.6,1.5,Eastern Europe,,Eastern Europe
+3,Europe,Drought/Wildfire,Latvia,LVA,DR,Drought,INFORM risk-score API,2.0,May,Very Low,3,0,2.0,0.9,0.5,Northern Europe,,Northern Europe
+3,Europe,Drought/Wildfire,Italy,ITA,DR,Drought,INFORM risk-score API,1.9,May,Very Low,3,0,1.9,1.4,1.0,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,Slovakia,SVK,DR,Drought,INFORM risk-score API,1.9,May,Very Low,3,0,1.9,1.4,0.8,Eastern Europe,,Eastern Europe
+3,Europe,Drought/Wildfire,Serbia,SRB,DR,Drought,INFORM risk-score API,1.7,May,Very Low,3,0,1.7,0.7,0.7,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,Denmark,DNK,DR,Drought,INFORM risk-score API,1.6,May,Very Low,3,0,1.6,0.9,0.8,Northern Europe,,Northern Europe
+3,Europe,Drought/Wildfire,Poland,POL,DR,Drought,INFORM risk-score API,1.6,May,Very Low,3,0,1.6,0.9,0.6,Eastern Europe,,Eastern Europe
+3,Europe,Drought/Wildfire,Portugal,PRT,DR,Drought,INFORM risk-score API,1.6,May,Very Low,3,0,1.6,1.1,0.5,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,Croatia,HRV,DR,Drought,INFORM risk-score API,1.5,May,Very Low,3,0,1.5,1.2,1.2,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,Greece,GRC,DR,Drought,INFORM risk-score API,1.5,May,Very Low,3,0,1.5,0.7,0.5,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,Bosnia and Herzegovina,BIH,DR,Drought,INFORM risk-score API,1.4,May,Very Low,3,0,1.4,1.4,1.4,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,Sweden,SWE,DR,Drought,INFORM risk-score API,1.4,May,Very Low,3,0,1.4,0.9,0.7,Northern Europe,,Northern Europe
+3,Europe,Drought/Wildfire,Bulgaria,BGR,DR,Drought,INFORM risk-score API,1.3,July,Very Low,3,0,1.0,1.0,1.3,Eastern Europe,,Eastern Europe
+3,Europe,Drought/Wildfire,France,FRA,DR,Drought,INFORM risk-score API,1.3,May,Very Low,3,0,1.3,1.0,0.8,Western Europe,,Western Europe
+3,Europe,Drought/Wildfire,Cyprus,CYP,DR,Drought,INFORM risk-score API,1.2,May,Very Low,3,0,1.2,0.5,0.5,Western Asia,,Western Asia
+3,Europe,Drought/Wildfire,Czech Republic,CZE,DR,Drought,INFORM risk-score API,1.2,May,Very Low,3,0,1.2,1.0,0.9,Eastern Europe,,Eastern Europe
+3,Europe,Drought/Wildfire,Montenegro,MNE,DR,Drought,INFORM risk-score API,1.2,May,Very Low,3,0,1.2,0.4,0.0,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,North Macedonia,MKD,DR,Drought,INFORM risk-score API,0.8,May,Very Low,3,0,0.8,0.8,0.8,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,Germany,DEU,DR,Drought,INFORM risk-score API,0.4,May,Very Low,3,0,0.4,0.2,0.1,Western Europe,,Western Europe
+3,Europe,Drought/Wildfire,Austria,AUT,DR,Drought,INFORM risk-score API,0.3,May,Very Low,3,0,0.3,0.1,0.1,Western Europe,,Western Europe
+3,Europe,Drought/Wildfire,Israel,ISR,DR,Drought,INFORM risk-score API,0.3,May,Very Low,3,0,0.3,0.3,0.3,Western Asia,,Western Asia
+3,Europe,Drought/Wildfire,Netherlands,NLD,DR,Drought,INFORM risk-score API,0.3,May,Very Low,3,0,0.3,0.0,0.0,Western Europe,,Western Europe
+3,Europe,Drought/Wildfire,United Kingdom,GBR,DR,Drought,INFORM risk-score API,0.3,May,Very Low,3,0,0.3,0.2,0.1,Northern Europe,,Northern Europe
+3,Europe,Drought/Wildfire,Switzerland,CHE,DR,Drought,INFORM risk-score API,0.2,May,Very Low,3,0,0.2,0.0,0.0,Western Europe,,Western Europe
+3,Europe,Drought/Wildfire,Belgium,BEL,DR,Drought,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.0,0.0,Western Europe,,Western Europe
+3,Europe,Drought/Wildfire,Ireland,IRL,DR,Drought,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.0,0.0,Northern Europe,,Northern Europe
+3,Europe,Drought/Wildfire,Slovenia,SVN,DR,Drought,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.0,0.0,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,Estonia,EST,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Europe,,Northern Europe
+3,Europe,Drought/Wildfire,Finland,FIN,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Europe,,Northern Europe
+3,Europe,Drought/Wildfire,Iceland,ISL,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Europe,,Northern Europe
+3,Europe,Drought/Wildfire,Liechtenstein,LIE,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Europe,,Western Europe
+3,Europe,Drought/Wildfire,Luxembourg,LUX,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Europe,,Western Europe
+3,Europe,Drought/Wildfire,Malta,MLT,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,Norway,NOR,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Europe,,Northern Europe
+3,Europe,Floods/TC,Russian Federation,RUS,FL,Flood,INFORM risk-score API,8.4,May,Very High,1,3,8.4,5.9,5.9,Eastern Europe,,Eastern Europe
+3,Europe,Floods/TC,Hungary,HUN,FL,Flood,INFORM risk-score API,7.5,May,Very High,2,2,7.5,7.5,2.5,Eastern Europe,,Eastern Europe
+3,Europe,Floods/TC,Ukraine,UKR,FL,Flood,INFORM risk-score API,7.1,July,Very High,1,1,2.4,2.4,7.1,Eastern Europe,,Eastern Europe
+3,Europe,Floods/TC,Romania,ROU,FL,Flood,INFORM risk-score API,7.0,June,Very High,2,2,2.3,7.0,7.0,Eastern Europe,,Eastern Europe
+3,Europe,Floods/TC,Slovakia,SVK,FL,Flood,INFORM risk-score API,6.7,June,Very High,1,1,4.5,6.7,4.5,Eastern Europe,,Eastern Europe
+3,Europe,Floods/TC,Croatia,HRV,FL,Flood,INFORM risk-score API,6.5,May,High,1,1,6.5,3.3,0.0,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,France,FRA,FL,Flood,INFORM risk-score API,6.4,June,High,1,1,3.8,6.4,3.8,Western Europe,,Western Europe
+3,Europe,Floods/TC,Serbia,SRB,FL,Flood,INFORM risk-score API,5.9,May,High,1,1,5.9,3.0,0.0,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,Türkiye,TUR,FL,Flood,INFORM risk-score API,5.7,July,High,1,1,4.6,1.1,5.7,Western Asia,,Western Asia
+3,Europe,Floods/TC,"Moldova, Republic of",MDA,FL,Flood,INFORM risk-score API,5.6,July,High,1,1,0.0,2.8,5.6,Eastern Europe,,Eastern Europe
+3,Europe,Floods/TC,Austria,AUT,FL,Flood,INFORM risk-score API,5.5,June,High,1,1,0.0,5.5,3.7,Western Europe,,Western Europe
+3,Europe,Floods/TC,Tajikistan,TJK,FL,Flood,INFORM risk-score API,5.4,May,High,1,1,5.4,4.6,3.1,Central Asia,,Central Asia
+3,Europe,Floods/TC,Czech Republic,CZE,FL,Flood,INFORM risk-score API,5.3,June,High,1,1,1.3,5.3,0.0,Eastern Europe,,Eastern Europe
+3,Europe,Floods/TC,Georgia,GEO,FL,Flood,INFORM risk-score API,5.1,July,High,1,1,1.7,3.4,5.1,Western Asia,,Western Asia
+3,Europe,Floods/TC,Azerbaijan,AZE,FL,Flood,INFORM risk-score API,4.9,May,Medium,2,0,4.9,4.9,0.0,Western Asia,,Western Asia
+3,Europe,Floods/TC,Bulgaria,BGR,FL,Flood,INFORM risk-score API,4.9,June,Medium,2,0,3.9,4.9,2.9,Eastern Europe,,Eastern Europe
+3,Europe,Floods/TC,United Kingdom,GBR,FL,Flood,INFORM risk-score API,4.8,June,Medium,1,0,0.0,4.8,2.9,Northern Europe,,Northern Europe
+3,Europe,Floods/TC,Bosnia and Herzegovina,BIH,FL,Flood,INFORM risk-score API,4.7,June,Medium,1,0,2.4,4.7,2.4,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,Germany,DEU,FL,Flood,INFORM risk-score API,4.6,June,Medium,1,0,3.1,4.6,3.1,Western Europe,,Western Europe
+3,Europe,Floods/TC,Poland,POL,FL,Flood,INFORM risk-score API,4.1,May,Medium,3,0,4.1,4.1,4.1,Eastern Europe,,Eastern Europe
+3,Europe,Floods/TC,Kyrgyzstan,KGZ,FL,Flood,INFORM risk-score API,2.8,June,Low,1,0,0.0,2.8,0.0,Central Asia,,Central Asia
+3,Europe,Floods/TC,Spain,ESP,FL,Flood,INFORM risk-score API,2.7,June,Low,1,0,1.4,2.7,0.0,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,Switzerland,CHE,FL,Flood,INFORM risk-score API,2.2,July,Low,1,0,0.0,0.0,2.2,Western Europe,,Western Europe
+3,Europe,Floods/TC,Italy,ITA,FL,Flood,INFORM risk-score API,1.4,May,Very Low,3,0,1.4,0.0,0.7,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,Belgium,BEL,FL,Flood,INFORM risk-score API,1.3,June,Very Low,3,0,0.0,1.3,0.0,Western Europe,,Western Europe
+3,Europe,Floods/TC,Kazakhstan,KAZ,FL,Flood,INFORM risk-score API,1.0,May,Very Low,3,0,1.0,0.0,0.0,Central Asia,,Central Asia
+3,Europe,Floods/TC,Finland,FIN,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Northern Europe,,Northern Europe
+3,Europe,Floods/TC,Iceland,ISL,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Northern Europe,,Northern Europe
+3,Europe,Floods/TC,Liechtenstein,LIE,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Western Europe,,Western Europe
+3,Europe,Floods/TC,Malta,MLT,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,Norway,NOR,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Northern Europe,,Northern Europe
+3,Europe,Floods/TC,Albania,ALB,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,Armenia,ARM,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+3,Europe,Floods/TC,Belarus,BLR,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Eastern Europe,,Eastern Europe
+3,Europe,Floods/TC,Cyprus,CYP,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+3,Europe,Floods/TC,Denmark,DNK,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Europe,,Northern Europe
+3,Europe,Floods/TC,Estonia,EST,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Europe,,Northern Europe
+3,Europe,Floods/TC,Greece,GRC,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,Ireland,IRL,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Europe,,Northern Europe
+3,Europe,Floods/TC,Israel,ISR,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+3,Europe,Floods/TC,Latvia,LVA,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Europe,,Northern Europe
+3,Europe,Floods/TC,Lithuania,LTU,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Europe,,Northern Europe
+3,Europe,Floods/TC,Luxembourg,LUX,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Europe,,Western Europe
+3,Europe,Floods/TC,Montenegro,MNE,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,Netherlands,NLD,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Europe,,Western Europe
+3,Europe,Floods/TC,North Macedonia,MKD,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,Portugal,PRT,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,Slovenia,SVN,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,Sweden,SWE,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Europe,,Northern Europe
+3,Europe,Floods/TC,Turkmenistan,TKM,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Central Asia,,Central Asia
+3,Europe,Floods/TC,Uzbekistan,UZB,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Central Asia,,Central Asia
+3,Europe,Floods/TC,Russian Federation,RUS,TC,Tropical Cyclone,INFORM risk-score API,2.0,July,Very Low,3,0,0.7,0.8,2.0,Eastern Europe,,Eastern Europe
+3,Europe,Floods/TC,Portugal,PRT,TC,Tropical Cyclone,INFORM risk-score API,0.1,July,Very Low,3,0,0.0,0.0,0.1,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,Albania,ALB,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,Armenia,ARM,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+3,Europe,Floods/TC,Austria,AUT,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Europe,,Western Europe
+3,Europe,Floods/TC,Azerbaijan,AZE,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+3,Europe,Floods/TC,Belarus,BLR,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Eastern Europe,,Eastern Europe
+3,Europe,Floods/TC,Belgium,BEL,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Europe,,Western Europe
+3,Europe,Floods/TC,Bosnia and Herzegovina,BIH,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,Bulgaria,BGR,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Eastern Europe,,Eastern Europe
+3,Europe,Floods/TC,Croatia,HRV,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,Cyprus,CYP,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+3,Europe,Floods/TC,Czech Republic,CZE,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Eastern Europe,,Eastern Europe
+3,Europe,Floods/TC,Denmark,DNK,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Europe,,Northern Europe
+3,Europe,Floods/TC,Estonia,EST,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Europe,,Northern Europe
+3,Europe,Floods/TC,Finland,FIN,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Europe,,Northern Europe
+3,Europe,Floods/TC,France,FRA,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Europe,,Western Europe
+3,Europe,Floods/TC,Georgia,GEO,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+3,Europe,Floods/TC,Germany,DEU,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Europe,,Western Europe
+3,Europe,Floods/TC,Greece,GRC,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,Hungary,HUN,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Eastern Europe,,Eastern Europe
+3,Europe,Floods/TC,Iceland,ISL,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Europe,,Northern Europe
+3,Europe,Floods/TC,Ireland,IRL,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Europe,,Northern Europe
+3,Europe,Floods/TC,Israel,ISR,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+3,Europe,Floods/TC,Italy,ITA,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,Kazakhstan,KAZ,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Central Asia,,Central Asia
+3,Europe,Floods/TC,Kyrgyzstan,KGZ,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Central Asia,,Central Asia
+3,Europe,Floods/TC,Latvia,LVA,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Europe,,Northern Europe
+3,Europe,Floods/TC,Liechtenstein,LIE,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Europe,,Western Europe
+3,Europe,Floods/TC,Lithuania,LTU,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Europe,,Northern Europe
+3,Europe,Floods/TC,Luxembourg,LUX,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Europe,,Western Europe
+3,Europe,Floods/TC,Malta,MLT,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,"Moldova, Republic of",MDA,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Eastern Europe,,Eastern Europe
+3,Europe,Floods/TC,Montenegro,MNE,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,Netherlands,NLD,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Europe,,Western Europe
+3,Europe,Floods/TC,North Macedonia,MKD,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,Norway,NOR,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Europe,,Northern Europe
+3,Europe,Floods/TC,Poland,POL,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Eastern Europe,,Eastern Europe
+3,Europe,Floods/TC,Romania,ROU,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Eastern Europe,,Eastern Europe
+3,Europe,Floods/TC,Serbia,SRB,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,Slovakia,SVK,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Eastern Europe,,Eastern Europe
+3,Europe,Floods/TC,Slovenia,SVN,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,Spain,ESP,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Europe,,Southern Europe
+3,Europe,Floods/TC,Sweden,SWE,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Europe,,Northern Europe
+3,Europe,Floods/TC,Switzerland,CHE,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Europe,,Western Europe
+3,Europe,Floods/TC,Tajikistan,TJK,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Central Asia,,Central Asia
+3,Europe,Floods/TC,Turkmenistan,TKM,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Central Asia,,Central Asia
+3,Europe,Floods/TC,Türkiye,TUR,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+3,Europe,Floods/TC,Ukraine,UKR,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Eastern Europe,,Eastern Europe
+3,Europe,Floods/TC,United Kingdom,GBR,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Europe,,Northern Europe
+3,Europe,Floods/TC,Uzbekistan,UZB,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Central Asia,,Central Asia
+3,Europe,Drought/Wildfire,Turkmenistan,TKM,WF,Wildfire,GWIS seasonal API,61.42,July,Very High,3,3,29.026880869565215,52.03483826086956,61.423413043478256,Central Asia,,Central Asia
+3,Europe,Drought/Wildfire,Uzbekistan,UZB,WF,Wildfire,GWIS seasonal API,38.05,July,Very High,3,3,18.53766,31.829077391304345,38.05207173913043,Central Asia,,Central Asia
+3,Europe,Drought/Wildfire,Türkiye,TUR,WF,Wildfire,GWIS seasonal API,17.72,July,Very High,1,2,4.274707391304348,9.536799130434783,17.72416956521739,Western Asia,,Western Asia
+3,Europe,Drought/Wildfire,Spain,ESP,WF,Wildfire,GWIS seasonal API,17.2,July,Very High,1,2,5.41715652173913,10.59716695652174,17.195820869565217,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,Cyprus,CYP,WF,Wildfire,GWIS seasonal API,13.57,July,High,2,2,6.5011082608695645,10.129692173913044,13.57382652173913,Western Asia,,Western Asia
+3,Europe,Drought/Wildfire,Portugal,PRT,WF,Wildfire,GWIS seasonal API,13.03,July,High,1,1,4.115110869565217,7.973147826086956,13.029249130434783,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,Greece,GRC,WF,Wildfire,GWIS seasonal API,11.79,July,High,1,1,3.457357391304348,6.192569130434783,11.785548260869565,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,Israel,ISR,WF,Wildfire,GWIS seasonal API,11.02,July,High,2,2,7.931243478260869,9.411789565217392,11.02428652173913,Western Asia,,Western Asia
+3,Europe,Drought/Wildfire,Azerbaijan,AZE,WF,Wildfire,GWIS seasonal API,10.48,July,High,1,1,2.323478260869565,7.565594347826087,10.475627826086956,Western Asia,,Western Asia
+3,Europe,Drought/Wildfire,North Macedonia,MKD,WF,Wildfire,GWIS seasonal API,7.76,July,Medium,1,0,2.0291465217391305,3.6579121739130436,7.757855217391304,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,Italy,ITA,WF,Wildfire,GWIS seasonal API,7.52,July,Medium,1,0,1.8791947826086957,4.159369565217391,7.516924347826087,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,Tajikistan,TJK,WF,Wildfire,GWIS seasonal API,7.33,July,Medium,1,0,1.3634704347826088,4.193220434782608,7.3302700000000005,Central Asia,,Central Asia
+3,Europe,Drought/Wildfire,Albania,ALB,WF,Wildfire,GWIS seasonal API,6.98,July,Medium,1,0,1.2982917391304347,3.098562608695652,6.977440869565218,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,San Marino,SMR,WF,Wildfire,GWIS seasonal API,6.82,July,Medium,1,0,1.3671860869565218,3.277114347826087,6.820800434782609,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,Malta,MLT,WF,Wildfire,GWIS seasonal API,5.56,July,Medium,1,0,2.9828186956521736,3.7182526086956527,5.556598695652173,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,"Moldova, Republic of",MDA,WF,Wildfire,GWIS seasonal API,5.49,July,Medium,1,0,3.5874547826086958,4.34576304347826,5.494311304347827,Eastern Europe,,Eastern Europe
+3,Europe,Drought/Wildfire,Bulgaria,BGR,WF,Wildfire,GWIS seasonal API,4.91,July,Low,1,0,1.5908526086956523,1.9078747826086957,4.911747391304347,Eastern Europe,,Eastern Europe
+3,Europe,Drought/Wildfire,Croatia,HRV,WF,Wildfire,GWIS seasonal API,4.8,July,Low,2,0,0.9654247826086957,2.1488352173913046,4.801329565217392,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,Ukraine,UKR,WF,Wildfire,GWIS seasonal API,4.72,July,Low,3,0,3.456209565217391,4.618753913043478,4.723605652173913,Eastern Europe,,Eastern Europe
+3,Europe,Drought/Wildfire,Serbia,SRB,WF,Wildfire,GWIS seasonal API,4.65,July,Low,2,0,1.6711417391304346,2.354107391304348,4.648106086956522,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,Romania,ROU,WF,Wildfire,GWIS seasonal API,3.6,July,Low,2,0,1.8867882608695652,2.076956956521739,3.6038039130434782,Eastern Europe,,Eastern Europe
+3,Europe,Drought/Wildfire,France,FRA,WF,Wildfire,GWIS seasonal API,3.52,July,Low,1,0,1.0720647826086958,1.9940917391304347,3.515333043478261,Western Europe,,Western Europe
+3,Europe,Drought/Wildfire,Kyrgyzstan,KGZ,WF,Wildfire,GWIS seasonal API,3.45,July,Low,1,0,0.6380956521739131,1.7549639130434784,3.447956086956522,Central Asia,,Central Asia
+3,Europe,Drought/Wildfire,Montenegro,MNE,WF,Wildfire,GWIS seasonal API,3.16,July,Low,1,0,0.43960086956521743,1.0708447826086955,3.163960434782609,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,Bosnia and Herzegovina,BIH,WF,Wildfire,GWIS seasonal API,3.0,July,Low,1,0,0.6390334782608695,1.2097973913043478,3.0028978260869565,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,Georgia,GEO,WF,Wildfire,GWIS seasonal API,2.75,July,Low,1,0,0.6456582608695652,1.9822704347826086,2.7528278260869565,Western Asia,,Western Asia
+3,Europe,Drought/Wildfire,Armenia,ARM,WF,Wildfire,GWIS seasonal API,2.66,July,Low,1,0,0.4571234782608696,1.8456,2.659469565217391,Western Asia,,Western Asia
+3,Europe,Drought/Wildfire,Monaco,MCO,WF,Wildfire,GWIS seasonal API,2.23,July,Low,1,0,0.5443369565217392,0.9452839130434783,2.232544347826087,Western Europe,,Western Europe
+3,Europe,Drought/Wildfire,Belarus,BLR,WF,Wildfire,GWIS seasonal API,2.21,June,Low,1,0,1.3846530434782607,2.2073121739130435,1.489557391304348,Eastern Europe,,Eastern Europe
+3,Europe,Drought/Wildfire,Slovakia,SVK,WF,Wildfire,GWIS seasonal API,2.18,July,Low,1,0,1.263993043478261,1.6446265217391305,2.1849552173913045,Eastern Europe,,Eastern Europe
+3,Europe,Drought/Wildfire,Poland,POL,WF,Wildfire,GWIS seasonal API,2.16,June,Low,1,0,1.471248695652174,2.1626408695652173,1.9860734782608696,Eastern Europe,,Eastern Europe
+3,Europe,Drought/Wildfire,Germany,DEU,WF,Wildfire,GWIS seasonal API,1.82,July,Very Low,3,0,1.0773208695652172,1.3636378260869564,1.817178260869565,Western Europe,,Western Europe
+3,Europe,Drought/Wildfire,Luxembourg,LUX,WF,Wildfire,GWIS seasonal API,1.79,July,Very Low,3,0,0.7436039130434782,1.0365565217391306,1.7923669565217393,Western Europe,,Western Europe
+3,Europe,Drought/Wildfire,Czech Republic,CZE,WF,Wildfire,GWIS seasonal API,1.75,July,Very Low,3,0,1.090233043478261,1.4258378260869566,1.7466095652173914,Eastern Europe,,Eastern Europe
+3,Europe,Drought/Wildfire,Belgium,BEL,WF,Wildfire,GWIS seasonal API,1.73,July,Very Low,3,0,1.1069078260869565,1.2474078260869566,1.7312486956521738,Western Europe,,Western Europe
+3,Europe,Drought/Wildfire,Lithuania,LTU,WF,Wildfire,GWIS seasonal API,1.71,June,Very Low,3,0,1.1655756521739131,1.7125539130434781,1.1407608695652172,Northern Europe,,Northern Europe
+3,Europe,Drought/Wildfire,Slovenia,SVN,WF,Wildfire,GWIS seasonal API,1.54,July,Very Low,3,0,0.4992795652173913,0.8726039130434783,1.5384195652173915,Southern Europe,,Southern Europe
+3,Europe,Drought/Wildfire,Latvia,LVA,WF,Wildfire,GWIS seasonal API,1.48,June,Very Low,3,0,1.1467708695652172,1.4817378260869563,1.1510947826086957,Northern Europe,,Northern Europe
+3,Europe,Drought/Wildfire,Estonia,EST,WF,Wildfire,GWIS seasonal API,1.33,June,Very Low,3,0,0.99734,1.3298069565217392,1.2453047826086958,Northern Europe,,Northern Europe
+3,Europe,Drought/Wildfire,Netherlands,NLD,WF,Wildfire,GWIS seasonal API,1.3,July,Very Low,3,0,1.0256582608695652,1.0018943478260869,1.3037047826086958,Western Europe,,Western Europe
+3,Europe,Drought/Wildfire,Denmark,DNK,WF,Wildfire,GWIS seasonal API,1.12,July,Very Low,3,0,0.6598169565217391,1.0735260869565217,1.1213717391304348,Northern Europe,,Northern Europe
+3,Europe,Drought/Wildfire,Sweden,SWE,WF,Wildfire,GWIS seasonal API,1.07,June,Very Low,3,0,0.5927008695652174,1.0712147826086957,0.9116617391304347,Northern Europe,,Northern Europe
+3,Europe,Drought/Wildfire,Finland,FIN,WF,Wildfire,GWIS seasonal API,0.95,June,Very Low,3,0,0.5799895652173913,0.9530813043478261,0.8713834782608696,Northern Europe,,Northern Europe
+3,Europe,Drought/Wildfire,Austria,AUT,WF,Wildfire,GWIS seasonal API,0.78,July,Very Low,3,0,0.36527086956521737,0.5576860869565217,0.7761504347826087,Western Europe,,Western Europe
+3,Europe,Drought/Wildfire,United Kingdom,GBR,WF,Wildfire,GWIS seasonal API,0.7,July,Very Low,3,0,0.4698656521739131,0.4912617391304348,0.7004526086956521,Northern Europe,,Northern Europe
+3,Europe,Drought/Wildfire,Switzerland,CHE,WF,Wildfire,GWIS seasonal API,0.58,July,Very Low,3,0,0.1450808695652174,0.35932434782608696,0.5774956521739131,Western Europe,,Western Europe
+3,Europe,Drought/Wildfire,Ireland,IRL,WF,Wildfire,GWIS seasonal API,0.43,June,Very Low,3,0,0.28647826086956524,0.42544173913043476,0.3830395652173913,Northern Europe,,Northern Europe
+3,Europe,Drought/Wildfire,Norway,NOR,WF,Wildfire,GWIS seasonal API,0.36,June,Very Low,3,0,0.16129608695652173,0.3560904347826087,0.34418391304347823,Northern Europe,,Northern Europe
+3,Europe,Drought/Wildfire,Liechtenstein,LIE,WF,Wildfire,GWIS seasonal API,0.33,July,Very Low,3,0,0.11875391304347825,0.22944,0.3296604347826087,Western Europe,,Western Europe
+3,Europe,Drought/Wildfire,Iceland,ISL,WF,Wildfire,GWIS seasonal API,0.25,June,Very Low,3,0,0.0934604347826087,0.2516060869565217,0.2409613043478261,Northern Europe,,Northern Europe
+3,Europe,Drought/Wildfire,Andorra,AND,WF,Wildfire,GWIS seasonal API,0.0,May,Very Low,3,0,0.0012095652173913043,0.0012095652173913043,0.0012095652173913043,Southern Europe,,Southern Europe
+4,MENA,Drought/Wildfire,Syrian Arab Republic,SYR,DR,Drought,INFORM risk-score API,7.2,May,Very High,1,1,7.2,2.8,2.6,Western Asia,,Western Asia
+4,MENA,Drought/Wildfire,"Iran, Islamic Republic of",IRN,DR,Drought,INFORM risk-score API,4.8,May,Medium,3,0,4.8,4.3,3.6,Southern Asia,,Southern Asia
+4,MENA,Drought/Wildfire,Morocco,MAR,DR,Drought,INFORM risk-score API,4.8,May,Medium,1,0,4.8,2.3,1.6,Northern Africa,,Northern Africa
+4,MENA,Drought/Wildfire,Jordan,JOR,DR,Drought,INFORM risk-score API,4.4,May,Medium,1,0,4.4,1.7,1.7,Western Asia,,Western Asia
+4,MENA,Drought/Wildfire,Tunisia,TUN,DR,Drought,INFORM risk-score API,4.4,May,Medium,1,0,4.4,0.5,0.3,Northern Africa,,Northern Africa
+4,MENA,Drought/Wildfire,Saudi Arabia,SAU,DR,Drought,INFORM risk-score API,4.1,July,Medium,1,0,2.1,3.2,4.1,Western Asia,,Western Asia
+4,MENA,Drought/Wildfire,United Arab Emirates,ARE,DR,Drought,INFORM risk-score API,4.1,May,Medium,1,0,4.1,1.6,0.0,Western Asia,,Western Asia
+4,MENA,Drought/Wildfire,Algeria,DZA,DR,Drought,INFORM risk-score API,4.0,May,Medium,1,0,4.0,1.2,0.0,Northern Africa,,Northern Africa
+4,MENA,Drought/Wildfire,Egypt,EGY,DR,Drought,INFORM risk-score API,3.1,June,Low,1,0,1.3,3.1,1.4,Northern Africa,,Northern Africa
+4,MENA,Drought/Wildfire,Iraq,IRQ,DR,Drought,INFORM risk-score API,1.6,May,Very Low,3,0,1.6,0.3,0.5,Western Asia,,Western Asia
+4,MENA,Drought/Wildfire,Lebanon,LBN,DR,Drought,INFORM risk-score API,1.2,May,Very Low,3,0,1.2,1.2,0.8,Western Asia,,Western Asia
+4,MENA,Drought/Wildfire,Yemen,YEM,DR,Drought,INFORM risk-score API,0.9,July,Very Low,3,0,0.6,0.6,0.9,Western Asia,,Western Asia
+4,MENA,Drought/Wildfire,Libya,LBY,DR,Drought,INFORM risk-score API,0.5,May,Very Low,3,0,0.5,0.0,0.0,Northern Africa,,Northern Africa
+4,MENA,Drought/Wildfire,Bahrain,BHR,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Drought/Wildfire,Kuwait,KWT,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Drought/Wildfire,Palestine,PSE,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Drought/Wildfire,Qatar,QAT,DR,Drought,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Floods/TC,Yemen,YEM,FL,Flood,INFORM risk-score API,3.8,July,Medium,1,0,1.0,1.0,3.8,Western Asia,,Western Asia
+4,MENA,Floods/TC,"Iran, Islamic Republic of",IRN,FL,Flood,INFORM risk-score API,2.4,July,Low,1,0,1.6,1.6,2.4,Southern Asia,,Southern Asia
+4,MENA,Floods/TC,Morocco,MAR,FL,Flood,INFORM risk-score API,1.2,May,Very Low,3,0,1.2,0.0,0.0,Northern Africa,,Northern Africa
+4,MENA,Floods/TC,Saudi Arabia,SAU,FL,Flood,INFORM risk-score API,1.2,July,Very Low,3,0,0.6,0.0,1.2,Western Asia,,Western Asia
+4,MENA,Floods/TC,Algeria,DZA,FL,Flood,INFORM risk-score API,0.7,June,Very Low,3,0,0.0,0.7,0.0,Northern Africa,,Northern Africa
+4,MENA,Floods/TC,Bahrain,BHR,FL,Flood,INFORM risk-score API,0.1,May,Very Low,3,0,0.1,0.1,0.1,Western Asia,,Western Asia
+4,MENA,Floods/TC,Egypt,EGY,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Africa,,Northern Africa
+4,MENA,Floods/TC,Iraq,IRQ,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Floods/TC,Jordan,JOR,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Floods/TC,Kuwait,KWT,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Floods/TC,Lebanon,LBN,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Floods/TC,Libya,LBY,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Africa,,Northern Africa
+4,MENA,Floods/TC,Palestine,PSE,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Floods/TC,Qatar,QAT,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Floods/TC,Syrian Arab Republic,SYR,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Floods/TC,Tunisia,TUN,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Africa,,Northern Africa
+4,MENA,Floods/TC,United Arab Emirates,ARE,FL,Flood,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Floods/TC,Algeria,DZA,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Africa,,Northern Africa
+4,MENA,Floods/TC,Bahrain,BHR,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Floods/TC,Egypt,EGY,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Africa,,Northern Africa
+4,MENA,Floods/TC,"Iran, Islamic Republic of",IRN,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Southern Asia,,Southern Asia
+4,MENA,Floods/TC,Iraq,IRQ,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Floods/TC,Jordan,JOR,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Floods/TC,Kuwait,KWT,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Floods/TC,Lebanon,LBN,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Floods/TC,Libya,LBY,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Africa,,Northern Africa
+4,MENA,Floods/TC,Morocco,MAR,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Africa,,Northern Africa
+4,MENA,Floods/TC,Palestine,PSE,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Floods/TC,Qatar,QAT,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Floods/TC,Saudi Arabia,SAU,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Floods/TC,Syrian Arab Republic,SYR,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Floods/TC,Tunisia,TUN,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Northern Africa,,Northern Africa
+4,MENA,Floods/TC,United Arab Emirates,ARE,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Floods/TC,Yemen,YEM,TC,Tropical Cyclone,INFORM risk-score API,0.0,May,Very Low,3,0,0.0,0.0,0.0,Western Asia,,Western Asia
+4,MENA,Drought/Wildfire,Kuwait,KWT,WF,Wildfire,GWIS seasonal API,96.83,June,Very High,3,3,49.09216782608696,96.83084826086956,90.37684,Western Asia,,Western Asia
+4,MENA,Drought/Wildfire,Iraq,IRQ,WF,Wildfire,GWIS seasonal API,80.52,July,Very High,3,3,40.84764086956522,75.33315,80.52219304347827,Western Asia,,Western Asia
+4,MENA,Drought/Wildfire,Qatar,QAT,WF,Wildfire,GWIS seasonal API,60.69,June,Very High,3,3,46.72803086956522,60.69136782608696,47.39263130434783,Western Asia,,Western Asia
+4,MENA,Drought/Wildfire,Saudi Arabia,SAU,WF,Wildfire,GWIS seasonal API,53.84,July,Very High,3,3,38.80566521739131,53.62989304347826,53.84425695652175,Western Asia,,Western Asia
+4,MENA,Drought/Wildfire,Syrian Arab Republic,SYR,WF,Wildfire,GWIS seasonal API,37.98,July,Very High,3,3,21.61173739130435,33.75987260869565,37.97961434782609,Western Asia,,Western Asia
+4,MENA,Drought/Wildfire,"Iran, Islamic Republic of",IRN,WF,Wildfire,GWIS seasonal API,33.86,July,Very High,2,3,13.219062173913043,29.223411304347827,33.86122608695653,Southern Asia,,Southern Asia
+4,MENA,Drought/Wildfire,Algeria,DZA,WF,Wildfire,GWIS seasonal API,29.83,July,Very High,2,3,11.519719130434781,21.030317391304347,29.83167565217391,Northern Africa,,Northern Africa
+4,MENA,Drought/Wildfire,Yemen,YEM,WF,Wildfire,GWIS seasonal API,27.76,June,Very High,3,3,20.871185652173914,27.75595347826087,25.13730956521739,Western Asia,,Western Asia
+4,MENA,Drought/Wildfire,Tunisia,TUN,WF,Wildfire,GWIS seasonal API,25.76,July,Very High,2,3,13.751021739130435,20.93317695652174,25.756933043478263,Northern Africa,,Northern Africa
+4,MENA,Drought/Wildfire,Egypt,EGY,WF,Wildfire,GWIS seasonal API,25.49,June,Very High,3,3,25.346191739130433,25.488119565217392,23.491290434782613,Northern Africa,,Northern Africa
+4,MENA,Drought/Wildfire,Bahrain,BHR,WF,Wildfire,GWIS seasonal API,25.41,June,Very High,2,3,15.500020000000001,25.406077826086957,21.53381173913043,Western Asia,,Western Asia
+4,MENA,Drought/Wildfire,Libya,LBY,WF,Wildfire,GWIS seasonal API,24.77,May,Very High,3,3,24.770119565217392,23.46781391304348,22.4787,Northern Africa,,Northern Africa
+4,MENA,Drought/Wildfire,Jordan,JOR,WF,Wildfire,GWIS seasonal API,24.64,June,Very High,3,3,23.4287752173913,24.64446130434783,23.131705217391303,Western Asia,,Western Asia
+4,MENA,Drought/Wildfire,Morocco,MAR,WF,Wildfire,GWIS seasonal API,24.41,July,Very High,1,3,12.069440434782608,16.93662304347826,24.410018260869567,Northern Africa,,Northern Africa
+4,MENA,Drought/Wildfire,Palestine,PSE,WF,Wildfire,GWIS seasonal API,17.54,July,Very High,2,3,15.637842173913043,17.119024347826088,17.53664739130435,Western Asia,,Western Asia
+4,MENA,Drought/Wildfire,United Arab Emirates,ARE,WF,Wildfire,GWIS seasonal API,16.44,June,High,3,3,16.313758260869566,16.441255652173915,14.912710869565217,Western Asia,,Western Asia
+4,MENA,Drought/Wildfire,Lebanon,LBN,WF,Wildfire,GWIS seasonal API,11.16,July,High,1,1,4.310998260869565,7.924288695652173,11.162594782608695,Western Asia,,Western Asia
