@@ -12,7 +12,7 @@ on:
         type: string
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: monthly-dref-analysis
@@ -96,3 +96,17 @@ jobs:
             outputs/disease_outbreaks/${{ steps.period.outputs.folder }}
           if-no-files-found: error
           retention-days: 90
+
+      - name: Commit and push monthly outputs
+        env:
+          MONTH_FOLDER: ${{ steps.period.outputs.folder }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f "outputs/risk_scores/${MONTH_FOLDER}" "outputs/disease_outbreaks/${MONTH_FOLDER}"
+          if git diff --staged --quiet; then
+            echo "No output changes to commit."
+          else
+            git commit -m "data: add ${MONTH_FOLDER} risk and disease analysis outputs"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
