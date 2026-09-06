@@ -100,6 +100,7 @@ jobs:
       - name: Commit and push monthly outputs
         env:
           MONTH_FOLDER: ${{ steps.period.outputs.folder }}
+          TARGET_BRANCH: ${{ github.ref_name || 'master' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -108,5 +109,6 @@ jobs:
             echo "No output changes to commit."
           else
             git commit -m "data: add ${MONTH_FOLDER} risk and disease analysis outputs"
-            git push origin HEAD:${{ github.ref_name }}
+            git pull --rebase origin "$TARGET_BRANCH"
+            git push origin "HEAD:${TARGET_BRANCH}"
           fi
